@@ -1,0 +1,716 @@
+<resources>
+    <string name="app_name">더 파이브</string>
+
+    <!-- 기타 모듈 관련 -->
+    <string name="facebook_app_id">583443925597399</string>
+    <!--    <string name="fb_login_protocol_scheme">fb[APP_ID]</string>-->
+
+
+    <!-- 앱내부 사용 문자열 -->
+    <string name="toast_network">네트워크 상태를 확인해주세요</string>
+    <string name="toast_develop">현재 개발중인 기능입니다</string>
+
+    <string name="ago_seconds">초전</string>
+    <string name="ago_minutes">분전</string>
+    <string name="ago_hours">시간전</string>
+    <string name="ago_days">일전</string>
+    <string name="ago_months">달전</string>
+    <string name="ago_years">년전</string>
+
+    <string-array name="array_report01">
+        <item>애인이 있거나 기혼자</item>
+        <item>비방욕설 / 음란한 언행</item>
+        <item>금전목적 (성매매, 조건만남 등)</item>
+        <item>성관계목적</item>
+        <item>허위 프로필</item>
+        <item>비매너 / 위반행위</item>
+    </string-array>
+    <string-array name="array_report02">
+        <item>자기소개글</item>
+        <item>자기소개글 이외의 프로필</item>
+        <item>상태메시지</item>
+        <item>프로필 사진</item>
+    </string-array>
+
+    <string-array name="array_contact">
+        <item>연령확인에 관하여</item>
+        <item>결제</item>
+        <item>기능 / 서비스</item>
+        <item>버그 / 오류</item>
+        <item>위반신고</item>
+        <item>취재의뢰</item>
+        <item>탈퇴</item>
+        <item>기타</item>
+    </string-array>
+
+    <!-- array -->
+    <string-array name="array_age">
+        <item>20세</item>
+        <item>21세</item>
+        <item>22세</item>
+        <item>23세</item>
+        <item>24세</item>
+        <item>25세</item>
+        <item>26세</item>
+        <item>27세</item>
+        <item>28세</item>
+        <item>29세</item>
+        <item>30세</item>
+        <item>31세</item>
+        <item>32세</item>
+        <item>33세</item>
+        <item>34세</item>
+        <item>35세</item>
+        <item>36세</item>
+        <item>37세</item>
+        <item>38세</item>
+        <item>39세</item>
+        <item>40세</item>
+        <item>41세</item>
+        <item>42세</item>
+        <item>43세</item>
+        <item>44세</item>
+        <item>45세</item>
+        <item>46세</item>
+        <item>47세</item>
+        <item>48세</item>
+        <item>49세</item>
+        <item>50세</item>
+        <item>51세</item>
+        <item>52세</item>
+        <item>53세</item>
+        <item>54세</item>
+        <item>55세</item>
+        <item>56세</item>
+        <item>57세</item>
+        <item>58세</item>
+        <item>59세</item>
+        <item>60세</item>
+        <item>61세</item>
+        <item>62세</item>
+        <item>63세</item>
+        <item>64세</item>
+        <item>65세</item>
+        <item>66세</item>
+        <item>67세</item>
+        <item>68세</item>
+        <item>69세</item>
+        <item>70세</item>
+        <item>71세</item>
+        <item>72세</item>
+        <item>73세</item>
+        <item>74세</item>
+        <item>75세</item>
+        <item>76세</item>
+        <item>77세</item>
+        <item>78세</item>
+        <item>79세</item>
+        <item>80세</item>
+    </string-array>
+
+    <string-array name="array_job">
+        <item>회사원</item>
+        <item>의사</item>
+        <item>변호사</item>
+        <item>공무원</item>
+        <item>금융</item>
+        <item>IT관계</item>
+        <item>크리에이터</item>
+        <item>파일럿</item>
+        <item>승무원</item>
+        <item>연예계</item>
+        <item>판매직</item>
+        <item>간호사</item>
+        <item>보육관계</item>
+        <item>비서</item>
+        <item>자영업</item>
+        <item>학생</item>
+        <item>교육계</item>
+        <item>식품계</item>
+        <item>통신</item>
+        <item>유통</item>
+        <item>WEB계</item>
+        <item>미용관계</item>
+        <item>여행업</item>
+        <item>사회복지</item>
+        <item>광고</item>
+        <item>스포츠</item>
+    </string-array>
+
+    <string-array name="array_salary">
+        <item>1000만원미만</item>
+        <item>1000만원이상~2000만원미만</item>
+        <item>2000만원이상~3000만원미만</item>
+        <item>3000만원이상~4000만원미만</item>
+        <item>4000만원이상~5000만원미만</item>
+        <item>5000만원이상~6000만원미만</item>
+        <item>6000만원이상~7000만원미만</item>
+        <item>7000만원이상~8000만원미만</item>
+        <item>8000만원이상~9000만원미만</item>
+        <item>9000만원이상~1억원미만</item>
+        <item>1억원이상</item>
+    </string-array>
+
+    <string-array name="array_edu">
+        <item>고등학교졸업</item>
+        <item>전문대학졸업</item>
+        <item>대학교졸업</item>
+        <item>대학원졸업</item>
+        <item>박사학위</item>
+    </string-array>
+
+    <string-array name="array_holiday">
+        <item>토일</item>
+        <item>평일</item>
+        <item>때에 따라 달라요</item>
+        <item>그 외</item>
+    </string-array>
+
+    <string-array name="array_family">
+        <item>장남/녀</item>
+        <item>차남/녀</item>
+        <item>외동</item>
+        <item>삼남/녀</item>
+        <item>그 외</item>
+    </string-array>
+
+    <string-array name="array_marriage">
+        <item>독신(미혼)</item>
+        <item>독신(이혼)</item>
+        <item>독신(사별)</item>
+        <item>기혼</item>
+    </string-array>
+
+    <string-array name="array_personality">
+        <item>다정함</item>
+        <item>솔직함</item>
+        <item>결단력있음</item>
+        <item>온화함</item>
+        <item>친근함</item>
+        <item>밝음</item>
+        <item>내성적</item>
+        <item>외향적</item>
+        <item>성실함</item>
+        <item>지적임</item>
+        <item>부지런함</item>
+        <item>꼼꼼함</item>
+        <item>낙천적</item>
+        <item>부끄럼쟁이</item>
+        <item>웃는얼굴</item>
+        <item>품위</item>
+        <item>침착</item>
+        <item>엄격함</item>
+        <item>사려깊음</item>
+        <item>사교적</item>
+        <item>냉정함</item>
+        <item>가정적</item>
+        <item>배려심</item>
+        <item>신중함</item>
+        <item>유머러스</item>
+        <item>대담함</item>
+        <item>세심함</item>
+        <item>넓은마음</item>
+        <item>기분파</item>
+        <item>낯가림</item>
+    </string-array>
+
+    <string-array name="array_nationality">
+        <item>대한민국</item>
+        <item>일본</item>
+        <item>중국</item>
+        <item>미국</item>
+        <item>캐나다</item>
+        <item>영국</item>
+        <item>싱가포르</item>
+        <item>그 외</item>
+    </string-array>
+
+
+    <string-array name="array_blood">
+        <item>A</item>
+        <item>B</item>
+        <item>O</item>
+        <item>AB</item>
+    </string-array>
+
+    <string-array name="array_location">
+        <item>서울</item>
+        <item>경기</item>
+        <item>인천</item>
+        <item>대전</item>
+        <item>대구</item>
+        <item>부산</item>
+        <item>광주</item>
+        <item>세종</item>
+        <item>울산</item>
+        <item>충북</item>
+        <item>충남</item>
+        <item>전북</item>
+        <item>전남</item>
+        <item>경북</item>
+        <item>경남</item>
+        <item>강원</item>
+        <item>제주</item>
+    </string-array>
+
+    <string-array name="array_gender">
+        <item>여성</item>
+        <item>남성</item>
+    </string-array>
+
+    <string-array name="array_height">
+        <item>140cm</item>
+        <item>141cm</item>
+        <item>142cm</item>
+        <item>143cm</item>
+        <item>144cm</item>
+        <item>145cm</item>
+        <item>146cm</item>
+        <item>147cm</item>
+        <item>148cm</item>
+        <item>149cm</item>
+        <item>150cm</item>
+        <item>151cm</item>
+        <item>152cm</item>
+        <item>153cm</item>
+        <item>154cm</item>
+        <item>155cm</item>
+        <item>156cm</item>
+        <item>157cm</item>
+        <item>158cm</item>
+        <item>159cm</item>
+        <item>160cm</item>
+        <item>161cm</item>
+        <item>162cm</item>
+        <item>163cm</item>
+        <item>164cm</item>
+        <item>165cm</item>
+        <item>166cm</item>
+        <item>167cm</item>
+        <item>168cm</item>
+        <item>169cm</item>
+        <item>170cm</item>
+        <item>171cm</item>
+        <item>172cm</item>
+        <item>173cm</item>
+        <item>174cm</item>
+        <item>175cm</item>
+        <item>176cm</item>
+        <item>177cm</item>
+        <item>178cm</item>
+        <item>179cm</item>
+        <item>180cm</item>
+        <item>181cm</item>
+        <item>182cm</item>
+        <item>183cm</item>
+        <item>184cm</item>
+        <item>185cm</item>
+        <item>186cm</item>
+        <item>187cm</item>
+        <item>188cm</item>
+        <item>189cm</item>
+        <item>190cm</item>
+        <item>191cm</item>
+        <item>192cm</item>
+        <item>193cm</item>
+        <item>194cm</item>
+        <item>195cm</item>
+        <item>196cm</item>
+        <item>197cm</item>
+        <item>198cm</item>
+        <item>199cm</item>
+        <item>200cm</item>
+        <item>201cm</item>
+        <item>202cm</item>
+        <item>203cm</item>
+        <item>204cm</item>
+        <item>205cm</item>
+        <item>206cm</item>
+        <item>207cm</item>
+        <item>208cm</item>
+        <item>209cm</item>
+        <item>210cm</item>
+        <item>211cm</item>
+        <item>212cm</item>
+        <item>213cm</item>
+        <item>214cm</item>
+        <item>215cm</item>
+        <item>216cm</item>
+        <item>217cm</item>
+        <item>218cm</item>
+        <item>219cm</item>
+        <item>220cm</item>
+    </string-array>
+
+    <string-array name="array_body">
+        <item>마른</item>
+        <item>슬림탄탄</item>
+        <item>보통</item>
+        <item>글래머</item>
+        <item>근육질</item>
+        <item>통통함</item>
+        <item>뚱뚱함</item>
+    </string-array>
+
+    <string-array name="array_drink">
+        <item>음주안함</item>
+        <item>월 1~2회</item>
+        <item>주 1~2회</item>
+        <item>주 3회이상</item>
+    </string-array>
+
+    <string-array name="array_smoke">
+        <item>경험없음</item>
+        <item>금연</item>
+        <item>흡연</item>
+    </string-array>
+
+    <string-array name="array_cgpms">
+        <item>CP</item>
+        <item>GP</item>
+        <item>PP</item>
+        <item>MP</item>
+        <item>SP</item>
+    </string-array>
+
+    <string-array name="array_interest">
+        <item>예능</item>
+        <item>드라마</item>
+        <item>유머</item>
+        <item>다큐멘터리</item>
+        <item>미드</item>
+        <item>일드</item>
+        <item>정치</item>
+        <item>시사</item>
+        <item>국내영화</item>
+        <item>해외영화</item>
+        <item>로맨스</item>
+        <item>코미디</item>
+        <item>공포</item>
+        <item>SF/판타지</item>
+        <item>성인</item>
+        <item>심야영화</item>
+        <item>넷플릭스</item>
+        <item>영화관</item>
+        <item>야구</item>
+        <item>축구</item>
+        <item>농구</item>
+        <item>배구</item>
+        <item>볼링</item>
+        <item>골프</item>
+        <item>수영</item>
+        <item>당구</item>
+        <item>낚시</item>
+        <item>홈트레이닝</item>
+        <item>음악감상</item>
+        <item>국내음악</item>
+        <item>K-POP</item>
+        <item>팝</item>
+        <item>재즈</item>
+        <item>힙합</item>
+        <item>클래식</item>
+        <item>피아노</item>
+        <item>기타</item>
+        <item>작곡</item>
+        <item>국악</item>
+        <item>클럽음악</item>
+        <item>노래방</item>
+        <item>종교음악</item>
+        <item>트로트</item>
+        <item>국내여행</item>
+        <item>해외여행</item>
+        <item>자동차여행</item>
+        <item>캠핑</item>
+        <item>기차여행</item>
+        <item>놀이동산</item>
+        <item>밤바다</item>
+        <item>제주도</item>
+        <item>옷</item>
+        <item>운동화</item>
+        <item>구두</item>
+        <item>가방</item>
+        <item>액세서리</item>
+        <item>한복</item>
+        <item>캐주얼</item>
+        <item>수트</item>
+        <item>시계</item>
+        <item>타투</item>
+        <item>맛집</item>
+        <item>한식</item>
+        <item>일식</item>
+        <item>중식</item>
+        <item>분식</item>
+        <item>카페</item>
+        <item>길거리음식</item>
+        <item>요리하기</item>
+        <item>캠핑요리</item>
+        <item>야식</item>
+        <item>소주</item>
+        <item>맥주</item>
+        <item>양주</item>
+        <item>와인</item>
+        <item>메이크업</item>
+        <item>향수</item>
+        <item>피부관리</item>
+        <item>성형</item>
+        <item>염색</item>
+        <item>네일</item>
+        <item>헬스</item>
+        <item>요가</item>
+        <item>왁싱</item>
+        <item>국산차</item>
+        <item>수입차</item>
+        <item>오토바이</item>
+        <item>게임</item>
+        <item>슈퍼카</item>
+        <item>스포츠카</item>
+        <item>세차</item>
+        <item>개</item>
+        <item>고양이</item>
+        <item>반려동물</item>
+        <item>동물카페</item>
+        <item>야생동물</item>
+    </string-array>
+
+    <integer-array name="array_interest_int">
+        <item>@drawable/tv_image01</item>
+        <item>@drawable/tv_image02</item>
+        <item>@drawable/tv_image03</item>
+        <item>@drawable/tv_image04</item>
+        <item>@drawable/tv_image05</item>
+        <item>@drawable/tv_image06</item>
+        <item>@drawable/tv_image07</item>
+        <item>@drawable/tv_image08</item>
+        <item>@drawable/movie_image01</item>
+        <item>@drawable/movie_image02</item>
+        <item>@drawable/movie_image03</item>
+        <item>@drawable/movie_image04</item>
+        <item>@drawable/movie_image05</item>
+        <item>@drawable/movie_image06</item>
+        <item>@drawable/movie_image07</item>
+        <item>@drawable/movie_image08</item>
+        <item>@drawable/movie_image09</item>
+        <item>@drawable/movie_image10</item>
+        <item>@drawable/sports_image01</item>
+        <item>@drawable/sports_image02</item>
+        <item>@drawable/sports_image03</item>
+        <item>@drawable/sports_image04</item>
+        <item>@drawable/sports_image05</item>
+        <item>@drawable/sports_image06</item>
+        <item>@drawable/sports_image07</item>
+        <item>@drawable/sports_image08</item>
+        <item>@drawable/sports_image09</item>
+        <item>@drawable/sports_image10</item>
+        <item>@drawable/music_image01</item>
+        <item>@drawable/music_image02</item>
+        <item>@drawable/music_image03</item>
+        <item>@drawable/music_image04</item>
+        <item>@drawable/music_image05</item>
+        <item>@drawable/music_image06</item>
+        <item>@drawable/music_image07</item>
+        <item>@drawable/music_image08</item>
+        <item>@drawable/music_image09</item>
+        <item>@drawable/music_image10</item>
+        <item>@drawable/music_image11</item>
+        <item>@drawable/music_image12</item>
+        <item>@drawable/music_image13</item>
+        <item>@drawable/music_image14</item>
+        <item>@drawable/music_image15</item>
+        <item>@drawable/travel_image01</item>
+        <item>@drawable/travel_image02</item>
+        <item>@drawable/travel_image03</item>
+        <item>@drawable/travel_image04</item>
+        <item>@drawable/travel_image05</item>
+        <item>@drawable/travel_image06</item>
+        <item>@drawable/travel_image07</item>
+        <item>@drawable/travel_image08</item>
+        <item>@drawable/fashion_image01</item>
+        <item>@drawable/fashion_image02</item>
+        <item>@drawable/fashion_image03</item>
+        <item>@drawable/fashion_image04</item>
+        <item>@drawable/fashion_image05</item>
+        <item>@drawable/fashion_image06</item>
+        <item>@drawable/fashion_image07</item>
+        <item>@drawable/fashion_image08</item>
+        <item>@drawable/fashion_image09</item>
+        <item>@drawable/fashion_image10</item>
+        <item>@drawable/taste_image01</item>
+        <item>@drawable/taste_image02</item>
+        <item>@drawable/taste_image03</item>
+        <item>@drawable/taste_image04</item>
+        <item>@drawable/taste_image05</item>
+        <item>@drawable/taste_image06</item>
+        <item>@drawable/taste_image07</item>
+        <item>@drawable/taste_image08</item>
+        <item>@drawable/taste_image09</item>
+        <item>@drawable/taste_image10</item>
+        <item>@drawable/taste_image11</item>
+        <item>@drawable/taste_image12</item>
+        <item>@drawable/taste_image13</item>
+        <item>@drawable/taste_image14</item>
+        <item>@drawable/beauty_image01</item>
+        <item>@drawable/beauty_image02</item>
+        <item>@drawable/beauty_image03</item>
+        <item>@drawable/beauty_image04</item>
+        <item>@drawable/beauty_image05</item>
+        <item>@drawable/beauty_image06</item>
+        <item>@drawable/beauty_image07</item>
+        <item>@drawable/beauty_image08</item>
+        <item>@drawable/beauty_image09</item>
+        <item>@drawable/car_image01</item>
+        <item>@drawable/car_image02</item>
+        <item>@drawable/car_image03</item>
+        <item>@drawable/car_image04</item>
+        <item>@drawable/car_image05</item>
+        <item>@drawable/car_image06</item>
+        <item>@drawable/car_image07</item>
+        <item>@drawable/animal_image01</item>
+        <item>@drawable/animal_image02</item>
+        <item>@drawable/animal_image03</item>
+        <item>@drawable/animal_image04</item>
+        <item>@drawable/animal_image05</item>
+    </integer-array>
+
+    <string-array name="interest_tv">
+        <item>예능</item>
+        <item>드라마</item>
+        <item>유머</item>
+        <item>다큐멘터리</item>
+        <item>미드</item>
+        <item>일드</item>
+        <item>정치</item>
+        <item>시사</item>
+    </string-array>
+
+    <string-array name="interest_movie">
+        <item>국내영화</item>
+        <item>해외영화</item>
+        <item>로맨스</item>
+        <item>코미디</item>
+        <item>공포</item>
+        <item>SF/판타지</item>
+        <item>성인</item>
+        <item>심야영화</item>
+        <item>넷플릭스</item>
+        <item>영화관</item>
+    </string-array>
+
+    <string-array name="interest_sports">
+        <item>야구</item>
+        <item>축구</item>
+        <item>농구</item>
+        <item>배구</item>
+        <item>볼링</item>
+        <item>골프</item>
+        <item>수영</item>
+        <item>당구</item>
+        <item>낚시</item>
+        <item>홈트레이닝</item>
+    </string-array>
+
+    <string-array name="interest_music">
+        <item>음악감상</item>
+        <item>국내음악</item>
+        <item>K-POP</item>
+        <item>팝</item>
+        <item>재즈</item>
+        <item>힙합</item>
+        <item>클래식</item>
+        <item>피아노</item>
+        <item>기타</item>
+        <item>작곡</item>
+        <item>국악</item>
+        <item>클럽음악</item>
+        <item>노래방</item>
+        <item>종교음악</item>
+        <item>트로트</item>
+    </string-array>
+
+    <string-array name="interest_travel">
+        <item>국내여행</item>
+        <item>해외여행</item>
+        <item>자동차여행</item>
+        <item>캠핑</item>
+        <item>기차여행</item>
+        <item>놀이동산</item>
+        <item>밤바다</item>
+        <item>제주도</item>
+    </string-array>
+
+    <string-array name="interest_fashion">
+        <item>옷</item>
+        <item>운동화</item>
+        <item>구두</item>
+        <item>가방</item>
+        <item>액세서리</item>
+        <item>한복</item>
+        <item>캐주얼</item>
+        <item>수트</item>
+        <item>시계</item>
+        <item>타투</item>
+    </string-array>
+
+    <string-array name="interest_taste">
+        <item>맛집</item>
+        <item>한식</item>
+        <item>일식</item>
+        <item>중식</item>
+        <item>분식</item>
+        <item>카페</item>
+        <item>길거리음식</item>
+        <item>요리하기</item>
+        <item>캠핑요리</item>
+        <item>야식</item>
+        <item>소주</item>
+        <item>맥주</item>
+        <item>양주</item>
+        <item>와인</item>
+    </string-array>
+    <string-array name="interest_health">
+        <item>메이크업</item>
+        <item>향수</item>
+        <item>피부관리</item>
+        <item>성형</item>
+        <item>염색</item>
+        <item>네일</item>
+        <item>헬스</item>
+        <item>요가</item>
+        <item>왁싱</item>
+    </string-array>
+
+
+    <string-array name="interest_enjoy">
+        <item>국산차</item>
+        <item>수입차</item>
+        <item>오토바이</item>
+        <item>게임</item>
+        <item>슈퍼카</item>
+        <item>스포츠카</item>
+        <item>세차</item>
+    </string-array>
+
+    <string-array name="interest_animal">
+        <item>개</item>
+        <item>고양이</item>
+        <item>반려동물</item>
+        <item>동물카페</item>
+        <item>야생동물</item>
+    </string-array>
+
+
+    <!-- 가입 코드 -->
+    <string name="prof_tag01">tag01</string>
+    <string name="prof_tag02">tag02</string>
+
+    <string name="pay_subs_name">subs_name</string>
+    <string name="pay_subs_code">subs_code</string>
+    <string name="pay_subs_price">subs_price</string>
+
+    <string name="pay_item_name">item_name</string>
+    <string name="pay_item_code">item_code</string>
+    <string name="pay_item_price">item_price</string>
+
+
+    <string name="interest_tag01">tag01</string>
+    <string name="interest_tag02">tag02</string>
+</resources>

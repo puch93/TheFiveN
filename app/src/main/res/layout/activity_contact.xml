@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f7f7f7"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/color_white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="문의하기"
+                android:textColor="@color/color_3b3b3b"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/btn_back" />
+
+            </FrameLayout>
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_e5e5e5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9.7dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="9.7dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카테고리"
+                android:textColor="@color/color_272727"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="23dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="6.7dp"
+                android:background="@drawable/icon_block_essential_bg"
+                android:gravity="center"
+                android:text="필수"
+                android:textColor="@color/color_white"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_category"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginLeft="9.7dp"
+            android:layout_marginTop="6.3dp"
+            android:layout_marginRight="10.3dp"
+            android:background="@drawable/sel_round_background_layout02"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="14.7dp"
+            android:paddingRight="3.3dp">
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="탭하여 선택해 주세요"
+                android:textColor="@color/color_434343"
+                android:textColorHint="@color/color_434343"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/btn_dropdown" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9.7dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="9.7dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="문의내용"
+                android:textColor="@color/color_272727"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="23dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="6.7dp"
+                android:background="@drawable/icon_block_essential_bg"
+                android:gravity="center"
+                android:text="필수"
+                android:textColor="@color/color_white"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_contents"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginLeft="9.7dp"
+            android:layout_marginTop="6.3dp"
+            android:layout_marginRight="10.3dp"
+            android:background="@drawable/sel_round_background_layout02"
+            android:gravity="top"
+            android:hint="문의내용을 입력해주세요"
+            android:lineSpacingExtra="3dp"
+            android:orientation="horizontal"
+            android:paddingLeft="13.7dp"
+            android:paddingTop="13.7dp"
+            android:paddingRight="13.7dp"
+            android:paddingBottom="13.7dp"
+            android:textColor="@color/color_a4a4a4"
+            android:textSize="14dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9.7dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="9.7dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="연락처 메일주소"
+                android:textColor="@color/color_272727"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="23dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="6.7dp"
+                android:background="@drawable/icon_block_essential_bg"
+                android:gravity="center"
+                android:text="필수"
+                android:textColor="@color/color_white"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginLeft="9.7dp"
+            android:layout_marginTop="6.3dp"
+            android:layout_marginRight="10.3dp"
+            android:background="@drawable/sel_round_background_layout02"
+            android:gravity="top"
+            android:hint="메일주소를 입력해주세요"
+            android:lineSpacingExtra="3dp"
+            android:orientation="horizontal"
+            android:paddingLeft="13.7dp"
+            android:paddingTop="13.7dp"
+            android:paddingRight="13.7dp"
+            android:paddingBottom="13.7dp"
+            android:singleLine="true"
+            android:textColor="@color/color_a4a4a4"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:id="@+id/fl_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="26dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/btn_uproad" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="전달하기"
+                android:textColor="@color/color_white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

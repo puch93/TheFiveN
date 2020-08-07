@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f7f7f7"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_white"
+            android:theme="@style/ToolbarTheme"
+            app:contentInsetStart="10dp"
+            app:popupTheme="@style/ToolbarTheme">
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/btn_back" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:letterSpacing="-0.04"
+                android:lineSpacingExtra="-12dp"
+                android:text="나의 성향보기"
+                android:textColor="#3b3b3b"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_e5e5e5" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadingEdge="none"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@color/color_white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_cgpms"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="23dp"
+                    tools:src="@drawable/pic_explain_cgpms_cp_woman" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29dp"
+                    android:includeFontPadding="false"
+                    android:text="my cgpms"
+                    android:textColor="#1ad792"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_cgpms_kind01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:includeFontPadding="false"
+                        android:textColor="#2c2424"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:text="CP" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:includeFontPadding="false"
+                        android:text=" - "
+                        android:textColor="#2c2424"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_cgpms_kind02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:includeFontPadding="false"
+                        android:textColor="#2c2424"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:text="CHILD PERSON" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_cgpms_contents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="50dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="#535353"
+                    android:textSize="13dp"
+                    tools:text="-	밝은 성격을 가지고 있다.
+
+-	자신의 감정에 숨김없이 싫고 좋음이 분명하여 기분 파악이 어렵지
+않다.
+
+-	누구도 생각해내지 못한 생각이나 답을 생각해내는 가끔 천재적인
+모습을 보이게 된다.
+
+-	아무리 화가나도 오래 끌지 않으며 뒤끝이 없다.
+
+-	일반적으로는 힘들 수 있는 자신의 잘못에 대한 인정이 빠르고 인정을 한다면 사과를 잘하는 편이다.
+
+-	나이에 비해 어려 보이는 경우가 많고,어린아이와 친밀도가 높아 아이들과 웃고 노는 잘 통하는 듯한 모습을 보이게 된다.
+
+-	대부분 나쁜 기억은 빨리 잊고 좋은 기억을 많이 하며 특히 자신이 유리했거나 좋았던 기억은 오랫동안 기억 속으로 가지고  있다.
+
+-	자신에게 어린아이의 모습이 있다는 것을 인정하지 못하거나 받아들이지 않으려 하는 경우가 많고 가끔 감정기복이 심하게 나타나게 되며 싫증이 빠른 편이다.
+
+-	배고픔이나 수면부족이나 졸림에 무척 약한 모습을 보이게 된다.
+
+-	당신은CP이기 때문에 GP의 여성을 만나는 것이 궁합 면으로 도움이
+됩니다.특히 홀수인 당신은 짝수의 GP여성을 만나는 것이 편안함을 느끼게 되며 자신의 부족함을 채워주게 되어 좋은 결과를 얻게 되는 것입니다." />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

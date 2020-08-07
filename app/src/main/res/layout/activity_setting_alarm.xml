@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/color_white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="알림설정"
+                android:textColor="@color/color_3b3b3b"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/btn_back" />
+
+            </FrameLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_e5e5e5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/color_f7f7f7" />
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_like"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="심쿵 !"
+            android:textColor="@color/color_272727"
+            android:textSize="14dp"
+            android:thumb="@drawable/switch_thumb_custom"
+            app:track="@drawable/switch_track_custom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/color_f7f7f7" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_matching"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="매칭"
+            android:textColor="@color/color_272727"
+            android:textSize="14dp"
+            android:thumb="@drawable/switch_thumb_custom"
+            app:track="@drawable/switch_track_custom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/color_f7f7f7" />
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_chatting"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="메시지"
+            android:textColor="@color/color_272727"
+            android:textSize="14dp"
+            android:thumb="@drawable/switch_thumb_custom"
+            app:track="@drawable/switch_track_custom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/color_f7f7f7" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_like_message"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="심쿵 메시지"
+            android:textColor="@color/color_272727"
+            android:textSize="14dp"
+            android:thumb="@drawable/switch_thumb_custom"
+            app:track="@drawable/switch_track_custom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/color_f7f7f7" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_other"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="그외의 알림"
+            android:textColor="@color/color_272727"
+            android:textSize="14dp"
+            android:thumb="@drawable/switch_thumb_custom"
+            app:track="@drawable/switch_track_custom" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_f7f7f7" />
+
+    </LinearLayout>
+</layout>

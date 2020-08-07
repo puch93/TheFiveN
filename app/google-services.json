@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "612727198523",
+    "firebase_url": "https://thefiven-8df95.firebaseio.com",
+    "project_id": "thefiven-8df95",
+    "storage_bucket": "thefiven-8df95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612727198523:android:4950aaa1c2ce975ed5dd1e",
+        "android_client_info": {
+          "package_name": "kr.co.core.thefiven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612727198523-f621pqmbs29kc51jo9n553m2eu5femhq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwhZhzZA-dQe4KpcH4chyUjNNH7Rt5T3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612727198523-f621pqmbs29kc51jo9n553m2eu5femhq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

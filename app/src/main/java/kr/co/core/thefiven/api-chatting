@@ -1,0 +1,26 @@
+** 채팅 API
+- 심쿵 메시지 등록
+/Chat/setHeartAttackMessage
+midx = 심쿵메시지를 쓰는 사람
+yidx= 심쿵메시지 받는 사람
+contents = 메싲시내용
+
+- 심쿵 메시지 확인하기
+/Chat/getHeartAttackMessage
+midx=메시지확인하는 본인의 인덱스
+yidx=메시지를 보낸 사람의 인덱스
+
+- 심쿵 메시지 답변하기
+/Chat/replyHeartAttackMessage
+midx=답변하려는 사람의 인덱스
+yidx=답변받는 사람의 인덱스
+state= yes/no (답변할것인지 거부할것인지)
+contents=답변내용
+
+- 채팅방 확인하기
+/Chat/chkChatRoom
+midx=내 인덱스
+yidx=상대 인덱스
+
+
+

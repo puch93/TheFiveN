@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_eff0f2"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_f9957f">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="신고하기"
+                android:textColor="@color/color_white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/btn_back_white" />
+
+            </FrameLayout>
+        </FrameLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadingEdge="none"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginBottom="2dp">
+
+                    <ImageView
+                        android:layout_width="127.3dp"
+                        android:layout_height="127.3dp"
+                        android:src="@drawable/box_profile_m" />
+
+                    <ImageView
+                        android:id="@+id/iv_profile_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/shape_circle" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_nick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="뿌꾸뿌꾸"
+                    android:textColor="@color/color_272727"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9.7dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="9.7dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="위반항목"
+                        android:textColor="@color/color_272727"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="23dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="6.7dp"
+                        android:background="@drawable/icon_block_essential_bg"
+                        android:gravity="center"
+                        android:text="필수"
+                        android:textColor="@color/color_white"
+                        android:textSize="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_violate01"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginLeft="9.7dp"
+                    android:layout_marginTop="6.3dp"
+                    android:layout_marginRight="10.3dp"
+                    android:background="@drawable/sel_round_background_layout02"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="13.7dp"
+                    android:paddingRight="3.3dp">
+
+                    <TextView
+                        android:id="@+id/tv_violation01"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="탭하여 선택해 주세요"
+                        android:textColor="@color/color_434343"
+                        android:textColorHint="@color/color_434343"
+                        android:textSize="14dp" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/btn_dropdown" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9.7dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginRight="9.7dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="위반항목"
+                        android:textColor="@color/color_272727"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="23dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="6.7dp"
+                        android:background="@drawable/icon_block_essential_bg"
+                        android:gravity="center"
+                        android:text="필수"
+                        android:textColor="@color/color_white"
+                        android:textSize="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_violate02"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginLeft="9.7dp"
+                    android:layout_marginTop="6.3dp"
+                    android:layout_marginRight="10.3dp"
+                    android:background="@drawable/sel_round_background_layout02"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="13.7dp"
+                    android:paddingRight="3.3dp">
+
+                    <TextView
+                        android:id="@+id/tv_violation02"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="탭하여 선택해 주세요"
+                        android:textColorHint="@color/color_434343"
+                        android:textColor="@color/color_434343"
+                        android:textSize="14dp" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/btn_dropdown" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9.7dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginRight="9.7dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="구체적인 이유"
+                        android:textColor="@color/color_272727"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="23dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="6.7dp"
+                        android:background="@drawable/icon_block_essential_bg"
+                        android:gravity="center"
+                        android:text="필수"
+                        android:textColor="@color/color_white"
+                        android:textSize="10dp" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/et_contents"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginLeft="9.7dp"
+                    android:layout_marginTop="6.3dp"
+                    android:layout_marginRight="10.3dp"
+                    android:background="@drawable/sel_round_background_layout02"
+                    android:gravity="top"
+                    android:hint="신고까지 이르게 된 경위나 위반내용을 가능한 구체적으로\n알려주세요"
+                    android:orientation="horizontal"
+                    android:paddingLeft="13.7dp"
+                    android:paddingTop="13.7dp"
+                    android:lineSpacingExtra="3dp"
+                    android:paddingRight="13.7dp"
+                    android:paddingBottom="13.7dp"
+                    android:textColor="@color/color_a4a4a4"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="13.3dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:letterSpacing="-0.04"
+                    android:lineSpacingExtra="-5sp"
+                    android:text="위반신고이유를 가능한 구체적으로 알려주세요"
+                    android:textColor="@color/color_777777"
+                    android:textSize="13dp" />
+
+                <FrameLayout
+                    android:id="@+id/fl_report"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="30dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/btn_next" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="제출하기"
+                        android:textColor="@color/color_white"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

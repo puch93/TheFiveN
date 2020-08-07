@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_f9957f"
+            android:theme="@style/ToolbarTheme"
+            app:contentInsetStart="10dp"
+            app:popupTheme="@style/ToolbarTheme">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="포인트 구입하기"
+                android:textColor="@color/color_white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:layout_gravity="left"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_gravity="center"
+                    android:src="@drawable/btn_back_white"/>
+
+            </FrameLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_fff4ba"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="현재 보유"
+                android:textColor="@color/color_224f54"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="  :  "
+                android:textColor="@color/color_224f54"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="포인트 "
+                android:textColor="@color/color_fe3408"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="20"
+                android:textColor="@color/color_fe3408"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="30dp">
+
+            <LinearLayout
+                android:id="@+id/ll_point_01"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/sel_btn_adding_point"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_adding_point_sale" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:includeFontPadding="false"
+                        android:text="기본"
+                        android:textColor="@color/color_white"
+                        android:textSize="11dp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/icon_adding_point_coin" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_weight="1"
+                    android:includeFontPadding="false"
+                    android:text="10p"
+                    android:textColor="@color/color_554d4b"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12,000원"
+                    android:textColor="@color/color_f45b5c"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_point_02"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="50dp"
+                android:background="@drawable/sel_btn_adding_point"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_adding_point_sale" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="약"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/color_white"
+                            android:textSize="11dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="30 %"
+                            android:textColor="@color/color_white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/icon_adding_point_coin" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_weight="1"
+                    android:includeFontPadding="false"
+                    android:text="20p"
+                    android:textColor="@color/color_554d4b"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="9.7dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:background="#a3a3a3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:textColor="#a3a3a3"
+                        android:gravity="end"
+                        android:text="(24,000원)"
+                        />
+                </FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21,000원"
+                    android:textColor="@color/color_f45b5c"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_point_03"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="50dp"
+                android:background="@drawable/sel_btn_adding_point"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_adding_point_sale" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="약"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/color_white"
+                            android:textSize="11dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="30 %"
+                            android:textColor="@color/color_white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/icon_adding_point_coin" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_weight="1"
+                    android:includeFontPadding="false"
+                    android:text="30p"
+                    android:textColor="@color/color_554d4b"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="9.7dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:background="#a3a3a3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:textColor="#a3a3a3"
+                        android:gravity="end"
+                        android:text="(36,000원)"
+                        />
+                </FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="29,000원"
+                    android:textColor="@color/color_f45b5c"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_point_04"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="50dp"
+                android:background="@drawable/sel_btn_adding_point"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_adding_point_sale" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="약"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/color_white"
+                            android:textSize="11dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="30 %"
+                            android:textColor="@color/color_white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/icon_adding_point_coin" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_weight="1"
+                    android:includeFontPadding="false"
+                    android:text="40p"
+                    android:textColor="@color/color_554d4b"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="9.7dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:background="#a3a3a3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:textColor="#a3a3a3"
+                        android:gravity="end"
+                        android:text="(48,000원)"
+                        />
+                </FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="37,000원"
+                    android:textColor="@color/color_f45b5c"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_point_05"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="50dp"
+                android:background="@drawable/sel_btn_adding_point"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_adding_point_sale" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="약"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/color_white"
+                            android:textSize="11dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="30 %"
+                            android:textColor="@color/color_white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/icon_adding_point_coin" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_weight="1"
+                    android:includeFontPadding="false"
+                    android:text="50p"
+                    android:textColor="@color/color_554d4b"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="9.7dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:background="#a3a3a3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:textColor="#a3a3a3"
+                        android:gravity="end"
+                        android:text="(60,000원)"
+                        />
+                </FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="45,000원"
+                    android:textColor="@color/color_f45b5c"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_point_06"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="50dp"
+                android:background="@drawable/sel_btn_adding_point"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_adding_point_sale" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="약"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/color_white"
+                            android:textSize="11dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="30 %"
+                            android:textColor="@color/color_white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/icon_adding_point_coin" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_weight="1"
+                    android:includeFontPadding="false"
+                    android:text="100p"
+                    android:textColor="@color/color_554d4b"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="9.7dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:background="#a3a3a3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:textColor="#a3a3a3"
+                        android:gravity="end"
+                        android:text="(120,000원)"
+                        />
+                </FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="79,000원"
+                    android:textColor="@color/color_f45b5c"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <FrameLayout
+                android:id="@+id/fl_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/btn_pay" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="결제하기"
+                    android:textColor="@color/color_white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="176.3dp"
+        android:layout_height="176.3dp"
+        android:background="@drawable/box_main_popup"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/iv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:id="@+id/tv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9.7dp"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:text=""
+            android:textColor="#fd4e33"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="9.7dp"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:includeFontPadding="false"-->
+<!--            android:shadowColor="#70000000"-->
+<!--            android:shadowDx="1.5000000000000004"-->
+<!--            android:shadowDy="2.598076211353316"-->
+<!--            android:shadowRadius="7"-->
+<!--            android:text="좋아요!"-->
+<!--            android:textColor="@color/color_7d7d7d"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold" />-->
+    </LinearLayout>
+
+</LinearLayout>

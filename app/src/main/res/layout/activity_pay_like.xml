@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_f9957f"
+            android:theme="@style/ToolbarTheme"
+            app:contentInsetStart="10dp"
+            app:popupTheme="@style/ToolbarTheme">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="심쿵 구입하기"
+                android:textColor="@color/color_white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:layout_gravity="left"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_gravity="center"
+                    android:src="@drawable/btn_back_white"/>
+
+            </FrameLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_fff4ba"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="현재 보유"
+                android:textColor="@color/color_224f54"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="  :  "
+                android:textColor="@color/color_224f54"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="심쿵 "
+                android:textColor="@color/color_fe3408"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="12"
+                android:textColor="@color/color_fe3408"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_like_01"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sel_like_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="17dp"
+            android:paddingRight="47dp">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_pay_heart_heart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9.7dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="5 '심쿵!'"
+                android:textColor="@color/color_434343"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_adding_point_coin" />
+
+            <TextView
+                android:layout_width="47.3dp"
+                android:layout_height="wrap_content"
+                android:text="1pt"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_434343"
+                android:gravity="end"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_eeeeee"/>
+
+        <LinearLayout
+            android:id="@+id/ll_like_02"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/sel_like_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="17dp"
+            android:paddingRight="47dp">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_pay_heart_heart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9.7dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="10 '심쿵!'"
+                android:textColor="@color/color_434343"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_adding_point_coin" />
+
+            <TextView
+                android:layout_width="47.3dp"
+                android:layout_height="wrap_content"
+                android:text="2pt"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_434343"
+                android:gravity="end"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_eeeeee"/>
+
+        <LinearLayout
+            android:id="@+id/ll_like_03"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/sel_like_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="17dp"
+            android:paddingRight="47dp">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_pay_heart_heart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9.7dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="15 '심쿵!'"
+                android:textColor="@color/color_434343"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_adding_point_coin" />
+
+            <TextView
+                android:layout_width="47.3dp"
+                android:layout_height="wrap_content"
+                android:text="3pt"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_434343"
+                android:gravity="end"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_eeeeee"/>
+
+        <LinearLayout
+            android:id="@+id/ll_like_04"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/sel_like_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="17dp"
+            android:paddingRight="47dp">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_pay_heart_heart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9.7dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="20 '심쿵!'"
+                android:textColor="@color/color_434343"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_adding_point_coin" />
+
+            <TextView
+                android:layout_width="47.3dp"
+                android:layout_height="wrap_content"
+                android:text="4pt"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_434343"
+                android:gravity="end"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_eeeeee"/>
+
+        <LinearLayout
+            android:id="@+id/ll_like_05"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/sel_like_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="17dp"
+            android:paddingRight="47dp">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_pay_heart_heart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9.7dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="30 '심쿵!'"
+                android:textColor="@color/color_434343"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_adding_point_coin" />
+
+            <TextView
+                android:layout_width="47.3dp"
+                android:layout_height="wrap_content"
+                android:text="5pt"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_434343"
+                android:gravity="end"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_eeeeee"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:id="@+id/fl_pay"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/btn_pay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:includeFontPadding="false"
+                android:text="결제하기"
+                android:textColor="@color/color_white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </LinearLayout>
+</layout>

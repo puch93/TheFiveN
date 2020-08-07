@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_f9957f</item>
+        <item name="colorPrimaryDark">@color/color_f9957f</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- toolbar button size -->
+    <style name="ActionButton" parent="@android:style/Widget.ActionButton">
+        <item name="android:minWidth">32dp</item>
+        <item name="android:maxWidth">32dp</item>
+        <item name="android:width">32dp</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="android:actionButtonStyle">@style/ActionButton</item>
+        <item name="actionButtonStyle">@style/ActionButton</item>
+    </style>
+
+    <style name="ToolbarThemeSearch" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/white</item>
+    </style>
+
+    <!-- other toolbar button size -->
+    <style name="ActionOtherButton" parent="@android:style/Widget.ActionButton">
+        <item name="android:minWidth">20dp</item>
+        <item name="android:maxWidth">20dp</item>
+        <item name="android:width">20dp</item>
+    </style>
+
+    <style name="ToolbarOtherTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="android:actionButtonStyle">@style/ActionButton</item>
+        <item name="actionButtonStyle">@style/ActionButton</item>
+    </style>
+
+    <!-- picker line color -->
+    <style name="CustomPickerTheme" parent="AppTheme">
+        <item name="colorControlNormal">@android:color/transparent</item>
+    </style>
+
+    <!-- dialog activity set -->
+    <style name="ActivityDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <!--        <item name="android:windowCloseOnTouchOutside">false</item>-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="SettingContextSwitch" parent="Theme.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:thumb">@drawable/switch_thumb_custom</item>
+        <item name="android:track">@drawable/switch_track_custom</item>
+        <item name="android:switchMinWidth">10dp</item> <!-- v19 setOnSwitchSize -->
+    </style>
+
+</resources>

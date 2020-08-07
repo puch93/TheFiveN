@@ -1,0 +1,446 @@
+** 기본 API
+1.회원가입
+/Member/regist_member
+
+join_type=회원가입(normal/facebook)
+uniq=기기아이디,
+fcm=fcm토큰
+id=아이디
+pw=비밀번호
+pw_confirm=비밀번호확인
+phone=전화번호
+nick=닉네임
+gender=성별(male/female)
+birth=생년월일
+birth_type=생년월일(음력:lunar/양력:solar)
+job=직업
+salary=연봉
+marriage=결혼이력
+personality=성격
+nationality=국적
+interest=관심사
+image+숫자=이미지 (파일형태) -> ex) 이미지 1개보낼때는 image1 / 증가할때마다 image2, image3... 으로
+blood=혈액형
+location=지역
+education=학력
+holiday=휴일
+family=형제자매
+height=키
+body=체형
+drink=음주량
+smoke=흡연량
+intro=자기소개
+twins_chk=쌍둥이체크
+
+
+2. 휴대폰 인증(인증번호요구)
+/Member/sms_send
+phone=전화번호
+
+
+3.휴대폰번호 인증
+/Member/check_auth_join
+phone=전화번호,
+auth_num=인증번호
+
+
+4. 이메일 인증(인증번호 요구)
+/Member/email_send
+email=이메일주소
+
+
+5. 이메일 인증(인증번호 검사)
+/Member/check_email_auth
+email=이메일
+auth_num=인증번호
+
+
+6. 아이디 중복 검사
+/Member/duplication_id
+id=검사할 아이디
+
+
+7. 닉네임 중복 검사
+/Member/duplication_nick
+nick=검사할 닉네임
+
+
+8. 비밀번호 찾기
+/Member/find_pw
+id=찾을 아이디
+phone=전화번호
+
+
+9. 비밀번호 변경
+/Member/findpw_regi
+id=아이디
+phone=전화번호
+pw=새로운 비밀번호
+
+
+10. 로그인
+/Member/login
+id=아이디
+pw=비밀번호
+fcm=fcm토큰
+
+
+11. 메인 이성 추천회원 리스트 불러오기
+** 없을 경우
+/Member/recommend_memberlist
+midx=내인덱스
+pagenum=20개단위 페이징 숫자
+age=나이 20,40(20~40)체크
+job=직업
+salary=연봉
+marriage=결혼이력
+personality=성격
+nationality=국적
+blood=혈액형(a/b/o/ab)
+location=지역(전체all)
+education=학력
+holiday=휴일
+family=형제자매
+height=키
+body=체형
+drink=음주량
+smoke=흡연량
+cgpms=기본성향(cp/gp/pp/mp/sp)
+intro=자기소개 여부(체크시Y)
+images=소개사진 여부(체크시Y)
+join3day=회원가입 3일 이내 회원(체크시Y)
+interest=공통 관심사(체크시Y)
+
+
+12. 메인 인기회원 리스트 가져오기
+/Member/main_popular_memberlist
+midx=내인덱스
+
+13. 심쿵하기
+/Member/setSingleHeartAttack
+midx=나의 인덱스
+yidx=상대방 인덱스
+
+14. 심쿵x2하기
+/Member/setDoubleHeartAttack
+midx=나의인덱스
+yidx=상대방 인덱스
+
+15. 회원 상세 정보 가져오기
+/Member/getProfile
+midx=열람하는 나의 인덱스
+yidx=열람하는 사람의 인덱스
+
+16. 회원 포인트 결제 (1P 결제하기 - 상대 프로필 보기)
+/Member/setUserPoint
+midx=열람하는 내 인덱스
+yidx=열람하고자하는 상대 인덱스
+value=구매포인트
+
+17.18.타입별 회원수 가져오기
+/Member/getCGPMSTypeCnt
+파라미터 없음
+
+19. CGPMS 타입별 회원 리스트 가져오기
+/Member/getCGPMSMember_list
+midx=열람하는 내인덱스
+type=cgpms형태
+
+20. 나에게 심쿵을 보낸 사람들 리스트
+/Member/getMyHeartAttacked_list
+midx=회원본인의 인덱스
+pagenum=10개단위의 페이지 숫자 없어도됨
+
+21. 내 프로필 열람회원 리스트
+/Member/readed_profile
+midx=내인덱스
+pagenum=20개 단위 페이징
+
+22. 나의 프로필보기
+/Member/getMyProfile
+midx=나의 인덱스
+
+23. 소개사진 등록
+/Member/setProfilepimg
+midx=유저인덱스
+image1~image20 이미지 등록
+
+24. 나의 관심사 등록하기
+/Member/setMyInterest
+midx=유저인덱스
+interest=관심사(,으로 구분)
+
+25. 내 정보 수정하기
+/Member/setProfileBasic
+midx=수정하고자
+job=직업
+salary=연봉
+marriage=결혼이력
+personality=성격
+nationality=생년
+blood=혈액형
+location=지역
+holiday=휴일
+family=형제자매
+height=키
+body=체형
+drink=음주량
+smoke=흡연량
+intro=자기소개
+
+26,27번 aPI문서에 없디
+
+28. 공지사항 가져오기
+/Board/view_list
+pg=페이지수
+btype=notice
+
+29. 내가 보낸 심쿵 리스트 가져오기
+/Member/getMyHeartAttack_list
+midx=내인덱스
+pagenum=페이징수
+
+30. 문의 하기
+/Board/question_input
+midx=문의자인덱스
+cate=문의종류
+contents=문의 내용
+email=문의자 이메일
+
+31. 신고 하기
+/Board/return_input
+midx=내인덱스
+yidx=상대인덱스
+cate1=신고항목1
+cate2=신고항목2
+contents=신고내용
+
+32. 차단/차단해제
+/Member/set_block_member
+midx=내인덱스
+yidx=차단대상 인덱스
+
+33. 차단회원 리스트 가져오기
+/Member/get_block_member_list
+midx=내인덱스
+
+34. 탈퇴하기
+/Member/drop_member
+midx=탈퇴하려는 인덱스
+
+35. 매칭중 리스트 가져오기
+/Member/matching_list
+midx=나의 인덱스
+
+36. 오프라인 모드 ON/OFF 여부 가져오기
+/Member/loginYN
+midx=내인덱스
+
+37. 오프라인 모드 ON/OFF 설정하기
+/Member/setloginYN
+midx=설정하려는 유저인덱스
+state=on/off
+
+39. 아는사람 만나지 않기 ON/OFF 설정하기
+/Member/friend_block
+midx=회원번호
+address_list=배열로 서버로 보내지말고 전화번호만 ,포함해서 문자열로 보내줘
+
+40. 약관 가져오기
+/Main/app_info
+
+42. 나를 차단했거나, 탈퇴회원인지 체크
+/Member/getBlockedInfo
+midx=나의 인덱스
+yidx=상대방의 인덱스
+
+--추가
+43. 상대 프로필보기 1P결헤 했는지 여부 확인
+/Member/getUserPoint
+midx=내인덱스
+yidx=상대 인덱스
+value=1
+
+44. 안읽은 채팅 개수 가져오기 함수
+/Chat/nonereadchatcnt
+midx=인덱스
+
+45. 유료회원인지 체크하는 함수
+/Member/chkmatchingMember
+midx=조회 회원 인덱스
+
+46. 관리자페이지 CGPMS 설명 불러오는 함수
+/Member/getCGPMSDescription
+gender=남/여(male/female)
+cgpms=1PP~12SP
+
+47.로그아웃 함수
+/Member/logout
+midx=인덱스 번호
+
+48. 회사정보 출력하는 함수
+/Main/company_info
+type=도움말/FIVE란?/24시간 감시체제/안심의 보안체제/안심/안전가이드/커뮤니티 가이드라인에 대하여/회사개요(help/five/24hour/security/guide/comunity/introduce)
+-----------------------------결제-----------------------------------
+구글결제 결과 전달하기
+/Member/sell_item
+midx=유저 인덱스
+itype=아이템종류(포인트 결제(아이템) : point, 유료회원가입(구독) : ticket
+isubject=아이템 명
+icode=아이템아이디
+
+p_order_id=주문ID
+p_store_type=GOOGLE (고정)
+p_purchase_time=구매시간
+p_purchase_price=구매가격
+p_signature=구매토큰
+p_info=구매관련 json객체
+
+결제관련 - 심쿵구매하기
+/Member/point_to_heart
+midx=구매하는 인덱스
+icode=아이템 아이디 sim01~sim05
+
+
+-----------------------------채팅--------------------------------------
+심쿵 메시지 등록
+/Chat/setHeartAttackMessage
+midx = 심쿵메시지를 쓰는 사람
+yidx= 심쿵메시지 받는 사람
+
+심쿵 메시지 확인하기
+/Chat/getHeartAttackMessage
+midx=메시지확인하는 본인의 인덱스
+yidx=메시지를 보낸 사람의 인덱스
+
+심쿵 메시지 답변하기
+/Chat/replyHeartAttackMessage
+midx=답변하려는 사람의 인덱스
+yidx=답변받는 사람의 인덱스
+state= yes/no (답변할것인지 거부할것인지)
+contents=답변내용
+
+채팅관련 - 채팅방 리스트 가져오기
+/Chat/listChats
+midx=내 인덱스
+
+채팅관련 메시지 보내기
+/Chat/fcmMsg
+
+midx=보낸사람의 인덱스
+contents=메시지
+room_idx=채팅방번호
+
+채팅관련 - 이미지 보내기
+/Chat/addmsgimg
+pimg=파일
+
+채팅관련 - 내가보낸 첫 번째 메시지인지 체크
+/Chat/chkmyfirstchat
+midx=내인덱스
+room_idx=채팅방 인덱스
+
+채팅관련 - 상대가 답변을 보냈는지 체크
+/Chat/chkyourfirstchat
+midx=내인덱스
+room_idx=채팅방 인덱스
+
+채팅관련 - 답변 확인하기
+/Chat/chkchatresponse
+midx=답변하려는 사람의 인덱스
+room_idx=채팅방 인덱스
+
+채팅관련 - 채팅나가기
+/Chat/leaveChat
+midx=나가려는 사람의 인덱스
+room_idx=채팅방 번호
+
+-- 추가
+채팅방 1P 결제 여부 확인
+/Chat/chkchatresponsepoint
+midx=답변하려는 사람의 인덱스
+room_idx=채팅방 인덱스
+
+
+-----------------------------기프티쇼--------------------------------------
+/Member/getGiftshowlist
+기프티쇼 리스트
+start
+size
+
+
+기프티쇼 쿠폰 상세 정보
+/Member/getGiftishowCouponDetail
+tr_id=거래아이디
+
+기프티쇼 쿠폰 취소
+/Member/setGiftishowCouponCancel
+tr_id=거래아이디
+
+기프티쇼 - 쿠폰요청 페이지
+/Member/getGiftishowRequest
+goods_code=상품코드
+order_no=주문번호
+mms_msg=MMS 메시지
+mms_title=MMS 제목
+callback_no=발송번호(-제외)
+phone_no=수신번호(-제외)
+template_id=카드 아이디
+banner_id=배너 아이디
+gubun=MMS발송 구분자(Y:핀번호 수신, N:MMS, I:바코드이미지수신)
+
+기프티쇼 - 현재 비즈머니 확인
+/Member/getBizMoneyInfo
+balance:남은잔액
+
+기프티쇼 상품 상세 정보
+/Member/getGiftishowDetail
+goods_code=고유상품코드
+
+실제로 기프티쇼 구매하는 함수
+/Member/setGiftishowPoint
+midx=구매하는 사람의 인덱스
+midx=구매하는 사람의 인덱스
+real_point=구매하는 사람의 최종소모 포인트
+tr_id=거래 아이디
+goodsNo=상품 번호
+goodsCode=상품 아이디
+goodsName=상품명
+brandCode=브랜드 코드
+brandName=브랜드 명
+content=상품설명
+contentAddDesc=상품추가설명
+goodsTypeCd=상품유형코드
+goodstypeNm=상품유형명
+goodsImgS=상품이미지 소(250X250)
+goodsImgB=상품이미지 대(500X500)
+goodsDescImgWeb=상품 설명 이미지
+brandIconImg=브랜드 아이콘 이미지
+mmsGoodsImg=상품 MMS 이미지
+realPrice=실판매가격(공급사 할인 반영 가격)
+salePrice=권장 소비자 가격(할인 반영 전)
+categorySeq1=전시카테고리1
+categoryName1=전시카테고리명1
+rmIdBuyCntFlagCd=ID당구매가능수량설정코드
+discountRate=최종판매할인률
+discountPrice=최종 구매 가격 (원단위절삭)
+goodsStateCd=상품상태코드 (판매중: SALE, 판매중지: SUS)
+rmCntFlag=총판매수량설정여부
+goodsTypeDtlNm=상세상품유형명
+saleDateFlagCd=판매일시 설정코드
+saleDateFlag=판매일시설정여부
+mmsReserveFlag=예약발송노출여부
+limitday=유효기간(일자)
+affilate=교환처명
+
+--추가
+기프티쇼 선물받은 내역
+/Member/getMyGiftishowInfo
+midx=나의 인덱스
+
+기프티쇼 브랜드 정보 조회
+/Member/getGiftishowBrandInfo
+
+기프티쇼 브랜드 상세 정보 조회
+/Member/getGiftishowBrandInfoDetail
+brand_code=브랜드코드

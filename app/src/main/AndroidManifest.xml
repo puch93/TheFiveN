@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="kr.co.core.thefiven">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".utility.CustomApplication"
+        android:allowBackup="false"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.ContactExplanationAct"/>
+        <activity android:name=".activity.ExplanationAct" />
+        <activity android:name=".activity.PushAct" />
+        <activity android:name=".activity.TermsAct" />
+        <activity android:name=".activity.LeaveAct" />
+        <activity android:name=".activity.LikeMemberAct" />
+        <activity android:name=".activity.gift.GiftStorageDetailAct" />
+        <activity android:name=".activity.gift.GiftStorageAct" />
+        <activity android:name=".activity.gift.GiftProductDetailAct" />
+        <activity android:name=".activity.myinfo.MyInfoCgpmsAct" />
+        <activity android:name=".activity.gift.GiftProductAct" />
+        <activity android:name=".activity.gift.GiftBrandAct" />
+        <activity android:name=".activity.InterestSubAct" />
+        <activity android:name=".activity.PasswordRegAct" />
+        <activity android:name=".activity.PasswordFindAct" />
+        <activity android:name=".activity.ContactAct" />
+        <activity android:name=".activity.setting.SettingKnowPeopleAct2" />
+        <activity android:name=".activity.setting.SettingKnowPeopleAct" />
+        <activity android:name=".activity.setting.SettingOfflineAct" />
+        <activity android:name=".activity.setting.SettingVisitorAct" />
+        <activity android:name=".activity.setting.SettingAlarmAct" />
+        <activity android:name=".activity.setting.SettingAct" />
+        <activity android:name=".activity.myinfo.MyInfoAct" />
+        <activity android:name=".activity.PayMemberAct" />
+        <activity android:name=".activity.CgpmsMemeberAct" />
+        <activity android:name=".activity.CellPhoneAuthAct" />
+        <activity android:name=".activity.SearchSubAct" />
+        <activity android:name=".activity.NoticeAct" />
+        <activity android:name=".activity.BlockAct" />
+        <activity android:name=".activity.SearchAct" />
+        <activity android:name=".activity.ChattingAct" />
+        <activity android:name=".activity.EnlargeAct" />
+        <activity android:name=".activity.ReportAct" />
+        <activity android:name=".activity.PayLikeAct" />
+        <activity android:name=".activity.PayPointAct" />
+        <activity android:name=".activity.PayItemAct" />
+        <activity android:name=".activity.myinfo.MyInfoImageAct" />
+        <activity android:name=".activity.myinfo.MyInfoInterestAct" />
+        <activity android:name=".activity.myinfo.MyInfoEditAct" />
+        <activity android:name=".activity.JoinAct" />
+        <activity android:name=".activity.LoginAct" />
+        <activity android:name=".activity.ProfileDetailAct" />
+        <activity android:name=".dialog.BasicDlg" />
+        <activity
+            android:name=".dialog.ListProfileMultiDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.AgePickerDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.CgpmsPointDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.CgpmsConfirmDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.LikeMessageReplyDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.PickDialog"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.ReviewDialog"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.LikeMessageDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.SimplePopupDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.ListOtherDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.ListProfileDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.DatePickerDialog"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.JoinInfoDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity
+            android:name=".dialog.WarningPopupDlg"
+            android:theme="@style/ActivityDialog" />
+        <activity android:name=".activity.BasicAct" />
+        <activity android:name=".activity.PermissionAct" />
+        <activity android:name=".activity.MainAct" />
+        <activity android:name=".activity.SplashAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".firebase.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="kr.co.core.thefiven.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.AdvertiserIDCollectionEnabled"
+            android:value="false" />
+        <meta-data
+            android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+            android:value="false" />
+        <meta-data
+            android:name="com.facebook.sdk.AutoInitEnabled"
+            android:value="false" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+    </application>
+
+</manifest>

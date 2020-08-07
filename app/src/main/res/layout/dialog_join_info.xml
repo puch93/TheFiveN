@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:background="@color/color_cccccc">
+
+        <LinearLayout
+            android:layout_width="266dp"
+            android:layout_height="150dp"
+            android:background="@drawable/sel_round_background"
+            android:orientation="vertical"
+            android:paddingTop="7dp">
+
+            <NumberPicker
+                android:id="@+id/picker"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:theme="@style/CustomPickerTheme" />
+            <!--            app:internalMaxHeight="100dp"-->
+            <!--            app:selectionDividersDistance="30dp"-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19.3dp"
+                android:gravity="right|bottom"
+                android:orientation="horizontal"
+                android:paddingRight="8.3dp"
+                android:paddingBottom="6dp">
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:includeFontPadding="false"
+                    android:padding="11dp"
+                    android:text="취소"
+                    android:textColor="@color/color_9b9b9b"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:includeFontPadding="false"
+                    android:padding="11dp"
+                    android:text="확인"
+                    android:textColor="@color/color_f3fe380c"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
