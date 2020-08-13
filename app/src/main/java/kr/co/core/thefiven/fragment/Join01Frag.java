@@ -237,7 +237,7 @@ public class Join01Frag extends BasicFrag implements View.OnClickListener {
                     Matcher matcher = VALID_PASSWORD_REGEX.matcher(text);
                     if (matcher.find()) {
                         binding.ivPwSelect.setSelected(true);
-                        if(binding.etPw.getText().toString().equalsIgnoreCase(binding.etPwConfirm.getText().toString())) {
+                        if (binding.etPw.getText().toString().equalsIgnoreCase(binding.etPwConfirm.getText().toString())) {
                             binding.ivPwConfirmSelect.setSelected(true);
                         } else {
                             binding.ivPwConfirmSelect.setSelected(false);

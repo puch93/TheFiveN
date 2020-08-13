@@ -159,7 +159,6 @@ public class LoginAct extends BasicAct implements View.OnClickListener {
                             AppPreference.setProfilePref(act, AppPreference.PREF_PW, pw);
                             AppPreference.setProfilePref(act, AppPreference.PREF_GENDER, StringUtil.getStr(job, "gender"));
                             AppPreference.setProfilePref(act, AppPreference.PREF_PHONE, StringUtil.getStr(job, "phone"));
-                            AppPreference.setProfilePref(act, AppPreference.PREF_IMAGE, StringUtil.getStr(job, "p_image1"));
                             AppPreference.setProfilePref(act, AppPreference.PREF_CGPMS, StringUtil.getStr(job, "cgpms"));
                             AppPreference.setProfilePrefBool(act, AppPreference.PREF_AUTO_LOGIN_STATE, true);
 

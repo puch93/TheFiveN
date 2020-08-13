@@ -227,7 +227,6 @@ public class Join08Frag extends BasicFrag implements View.OnClickListener {
                             AppPreference.setProfilePref(act, AppPreference.PREF_PW, JoinAct.joinData.getPw());
                             AppPreference.setProfilePref(act, AppPreference.PREF_GENDER, StringUtil.getStr(job, "gender"));
                             AppPreference.setProfilePref(act, AppPreference.PREF_PHONE, StringUtil.getStr(job, "phone"));
-                            AppPreference.setProfilePref(act, AppPreference.PREF_IMAGE, StringUtil.getStr(job, "p_image1"));
                             AppPreference.setProfilePref(act, AppPreference.PREF_CGPMS, StringUtil.getStr(job, "cgpms"));
                             AppPreference.setProfilePrefBool(act, AppPreference.PREF_AUTO_LOGIN_STATE, true);
 
@@ -394,16 +393,21 @@ public class Join08Frag extends BasicFrag implements View.OnClickListener {
     }
 
     private void nextProcess() {
-        ArrayList<String> list = new ArrayList<>();
+        if (imageList.size() > 3) {
+            Common.showToast(act, "최대 3장까지 등록 가능합니다");
+        } else if (imageList.size() < 2) {
+            Common.showToast(act, "최소 2장이상 등록하여야 합니다");
+        } else {
+            ArrayList<String> list = new ArrayList<>();
+            for (int i = 0; i < imageList.size(); i++) {
+                list.add(imageList.get(i).getImage());
+            }
 
-        for (int i = 0; i < imageList.size(); i++) {
-            list.add(imageList.get(i).getImage());
+            JoinAct.joinData.setImages(list);
+
+            doJoin();
+            Log.i(StringUtil.TAG, "last data: " + JoinAct.joinData);
         }
-
-        JoinAct.joinData.setImages(list);
-
-        doJoin();
-        Log.i(StringUtil.TAG, "last data: " + JoinAct.joinData);
     }
 
     private void doJoin() {

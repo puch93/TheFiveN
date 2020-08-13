@@ -30,7 +30,6 @@ public class Join07Frag extends BasicFrag implements View.OnClickListener {
 
         startActivity(new Intent(act, SimplePopupDlg.class).putExtra("type", StringUtil.DLG_INTRO));
 
-        binding.flSkip.setOnClickListener(this);
         binding.flNext.setOnClickListener(this);
         binding.flBack.setOnClickListener(this);
 
@@ -48,10 +47,6 @@ public class Join07Frag extends BasicFrag implements View.OnClickListener {
                 }
 
                 nextProcess(false);
-                break;
-
-            case R.id.fl_skip:
-                nextProcess(true);
                 break;
 
             case R.id.fl_back:

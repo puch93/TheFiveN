@@ -165,7 +165,6 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
 
                         if (StringUtil.getStr(jo, "result").equalsIgnoreCase("Y") || StringUtil.getStr(jo, "result").equalsIgnoreCase(NetUrls.SUCCESS)) {
                             final JSONObject job = jo.getJSONObject("value");
-                            AppPreference.setProfilePref(act, AppPreference.PREF_IMAGE, StringUtil.getStr(job, "p_image1"));
 
                             //프로필 사진관련
                             if(!StringUtil.isNull(StringUtil.getStr(job, "piimg"))) {

@@ -21,6 +21,7 @@ import jp.wasabeef.glide.transformations.BlurTransformation;
 import kr.co.core.thefiven.R;
 import kr.co.core.thefiven.activity.ProfileDetailAct;
 import kr.co.core.thefiven.data.MainTopData;
+import kr.co.core.thefiven.utility.AppPreference;
 import kr.co.core.thefiven.utility.StringUtil;
 
 public class MainTopAdapter extends RecyclerView.Adapter<MainTopAdapter.ViewHolder> {
@@ -70,6 +71,8 @@ public class MainTopAdapter extends RecyclerView.Adapter<MainTopAdapter.ViewHold
      * 검수완료: Y / 검수중: N
      * */
     private void checkImageState(ImageView imageView, String dataUrl, String state, String gender) {
+        gender = AppPreference.getProfilePref(act, AppPreference.PREF_GENDER).equalsIgnoreCase("male") ? "female" : "male";
+
         if (state.equalsIgnoreCase("Y")) {
             Glide.with(act)
                     .load(dataUrl)

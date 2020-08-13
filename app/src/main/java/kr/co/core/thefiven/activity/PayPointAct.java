@@ -89,7 +89,6 @@ public class PayPointAct extends BasicAct implements View.OnClickListener {
 
                         if (StringUtil.getStr(jo, "result").equalsIgnoreCase("Y") || StringUtil.getStr(jo, "result").equalsIgnoreCase(NetUrls.SUCCESS)) {
                             JSONObject job = jo.getJSONObject("value");
-                            AppPreference.setProfilePref(act, AppPreference.PREF_IMAGE, StringUtil.getStr(job, "p_image1"));
 
                             final String point = StringUtil.getStr(job, "u_point");
 

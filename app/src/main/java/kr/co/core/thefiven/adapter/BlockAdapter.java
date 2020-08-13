@@ -67,6 +67,8 @@ public class BlockAdapter extends RecyclerView.Adapter<BlockAdapter.ViewHolder> 
      * 검수완료: Y / 검수중: N
      * */
     private void checkImageState(ImageView imageView, String dataUrl, String state, String gender) {
+        gender = AppPreference.getProfilePref(act, AppPreference.PREF_GENDER).equalsIgnoreCase("male") ? "female" : "male";
+
         if (state.equalsIgnoreCase("Y")) {
             Glide.with(act)
                     .load(dataUrl)

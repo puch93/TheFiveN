@@ -282,8 +282,9 @@ public class ProfileDetailAct extends BasicAct implements View.OnClickListener, 
                                     profile_img = StringUtil.getStr(img_object, "pi_img");
                                     profile_img_ck = StringUtil.getStr(img_object, "pi_img_chk");
 
-                                    imageList.add(new OtherProfileImageData(profile_img, profile_img_ck));
-
+                                    if(!StringUtil.isNull(profile_img)) {
+                                        imageList.add(new OtherProfileImageData(profile_img, profile_img_ck));
+                                    }
                                     Log.i(StringUtil.TAG, "end: ");
                                 }
                             }

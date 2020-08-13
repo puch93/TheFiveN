@@ -40,15 +40,12 @@ public class Join04Frag extends BasicFrag implements View.OnClickListener {
         binding.flSkip.setOnClickListener(this);
 
         binding.llBloodArea.setOnClickListener(this);
-        binding.llLocationArea.setOnClickListener(this);
         binding.llEduArea.setOnClickListener(this);
         binding.llHolidayArea.setOnClickListener(this);
         binding.llFamilyArea.setOnClickListener(this);
 
         binding.llBloodArea.setTag(R.string.prof_tag01, StringUtil.PROF_BLOOD);
         binding.llBloodArea.setTag(R.string.prof_tag02, binding.tvBlood);
-        binding.llLocationArea.setTag(R.string.prof_tag01, StringUtil.PROF_LOCATION);
-        binding.llLocationArea.setTag(R.string.prof_tag02, binding.tvLocation);
         binding.llEduArea.setTag(R.string.prof_tag01, StringUtil.PROF_EDU);
         binding.llEduArea.setTag(R.string.prof_tag02, binding.tvEdu);
         binding.llHolidayArea.setTag(R.string.prof_tag01, StringUtil.PROF_HOLIDAY);
@@ -84,7 +81,6 @@ public class Join04Frag extends BasicFrag implements View.OnClickListener {
 
         switch (view.getId()) {
             case R.id.ll_blood_area:
-            case R.id.ll_location_area:
             case R.id.ll_edu_area:
             case R.id.ll_holiday_area:
             case R.id.ll_family_area:
@@ -99,9 +95,6 @@ public class Join04Frag extends BasicFrag implements View.OnClickListener {
             case R.id.fl_next:
                 if (binding.tvBlood.length() == 0) {
                     Common.showToast(act, "혈액형을 선택해주세요");
-                    return;
-                } else if (binding.tvLocation.length() == 0) {
-                    Common.showToast(act, "지역을 선택해주세요");
                     return;
                 } else if (binding.tvEdu.length() == 0) {
                     Common.showToast(act, "학력을 선택해주세요");
@@ -130,7 +123,6 @@ public class Join04Frag extends BasicFrag implements View.OnClickListener {
     private void nextProcess(boolean isPass) {
         if(isPass) {
             JoinAct.joinData.setBlood("");
-            JoinAct.joinData.setLocation("");
             JoinAct.joinData.setEdu("");
             JoinAct.joinData.setHoliday("");
             JoinAct.joinData.setFamily("");
@@ -139,12 +131,6 @@ public class Join04Frag extends BasicFrag implements View.OnClickListener {
                 JoinAct.joinData.setBlood("");
             } else {
                 JoinAct.joinData.setBlood(binding.tvBlood.getText().toString());
-            }
-
-            if (binding.tvLocation.length() == 0) {
-                JoinAct.joinData.setLocation("");
-            } else {
-                JoinAct.joinData.setLocation(binding.tvLocation.getText().toString());
             }
 
             if (binding.tvEdu.length() == 0) {

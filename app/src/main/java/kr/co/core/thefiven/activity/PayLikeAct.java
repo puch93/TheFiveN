@@ -80,7 +80,6 @@ public class PayLikeAct extends BasicAct implements View.OnClickListener {
 
                         if (StringUtil.getStr(jo, "result").equalsIgnoreCase("Y") || StringUtil.getStr(jo, "result").equalsIgnoreCase(NetUrls.SUCCESS)) {
                             JSONObject job = jo.getJSONObject("value");
-                            AppPreference.setProfilePref(act, AppPreference.PREF_IMAGE, StringUtil.getStr(job, "p_image1"));
 
                             final String like = StringUtil.getStr(job, "heart");
 

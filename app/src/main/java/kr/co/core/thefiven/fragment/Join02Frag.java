@@ -32,6 +32,7 @@ public class Join02Frag extends BasicFrag implements View.OnClickListener {
     private AppCompatActivity act;
 
     private static final int INFO_DIALOG = 100;
+    private static final int INFO_DIALOG2 = 102;
     private static final int DATE_PICKER = 101;
 
     private int year = 1970;
@@ -54,6 +55,7 @@ public class Join02Frag extends BasicFrag implements View.OnClickListener {
         binding.flBack.setOnClickListener(this);
         binding.llBirthArea.setOnClickListener(this);
         binding.llGenderArea.setOnClickListener(this);
+        binding.llLocationArea.setOnClickListener(this);
 
         // 음력체크
         binding.rgSolarLunar.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -98,7 +100,6 @@ public class Join02Frag extends BasicFrag implements View.OnClickListener {
         return binding.getRoot();
     }
 
-
     @Override
     public void onResume() {
         super.onResume();
@@ -140,6 +141,14 @@ public class Join02Frag extends BasicFrag implements View.OnClickListener {
                     day_s = "0" + day_s;
 
                 binding.tvBirth.setText(year_s + "년 " + month_s + "월 " + day_s + "일");
+            } else {
+                if (!StringUtil.isNull(value)) {
+                    if (value.equalsIgnoreCase(StringUtil.PROF_NO_DATA)) {
+                        binding.tvLocation.setText(null);
+                    } else {
+                        binding.tvLocation.setText(value);
+                    }
+                }
             }
         }
     }
@@ -164,12 +173,22 @@ public class Join02Frag extends BasicFrag implements View.OnClickListener {
                 startActivityForResult(intent, INFO_DIALOG);
                 break;
 
+            case R.id.ll_location_area:
+                intent = new Intent(act, ListProfileDlg.class);
+                intent.putExtra("type", "location");
+                intent.putExtra("data", binding.tvLocation.getText().toString());
+                startActivityForResult(intent, INFO_DIALOG2);
+                break;
+
             case R.id.fl_next:
                 if (binding.tvGender.length() == 0) {
                     Common.showToast(act, "성별을 선택해주세요");
                     return;
                 } else if (binding.tvBirth.length() == 0) {
                     Common.showToast(act, "생년월일을 선택해주세요");
+                    return;
+                } else if (binding.tvLocation.length() == 0) {
+                    Common.showToast(act, "지역을 선택해주세요");
                     return;
                 }
 
@@ -211,6 +230,7 @@ public class Join02Frag extends BasicFrag implements View.OnClickListener {
         JoinAct.joinData.setBirth(year_s + month_s + day_s);
         JoinAct.joinData.setBirth_type((String) binding.rgSolarLunar.getTag());
         JoinAct.joinData.setBirth_twin((String) binding.cbTwin.getTag());
+        JoinAct.joinData.setLocation(binding.tvLocation.getText().toString());
 
         BasicFrag fragment = new Join03Frag();
         ((JoinAct) act).replaceFragment(fragment);

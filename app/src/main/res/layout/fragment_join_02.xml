@@ -273,6 +273,46 @@
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="지역"
+                android:textColor="@color/color_272727"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_location_area"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginTop="7.7dp"
+                android:background="@drawable/sel_round_edit_text_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="17dp"
+                android:paddingRight="9.7dp">
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="지역을 선택해주세요"
+                    android:singleLine="true"
+                    android:textColor="@color/color_434343"
+                    android:textColorHint="@color/color_b8b8b8"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/btn_dropdown" />
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"

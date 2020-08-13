@@ -107,6 +107,9 @@ public class ChattingAct extends BasicAct implements View.OnClickListener, Popup
     private static final int PHOTO_TAKE = 1002;
     private static final int PHOTO_CROP = 1003;
 
+
+    private String profile_img = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,14 +125,7 @@ public class ChattingAct extends BasicAct implements View.OnClickListener, Popup
         otherGender = getIntent().getStringExtra("otherGender");
         isMatching = getIntent().getStringExtra("room_type").equalsIgnoreCase("heartmatching");
 
-        setLayout();
-
-        if (isMatching) {
-            isFirstMsg();
-            checkChattingPay();
-        } else {
-            setupSocketClient();
-        }
+        getMyInfo();
     }
 
 
@@ -268,7 +264,7 @@ public class ChattingAct extends BasicAct implements View.OnClickListener, Popup
         /* set recycler view */
         binding.rcvChatting.setLayoutManager(new LinearLayoutManager(act));
 
-        adapter = new ChattingAdapter(act, room_idx, list, AppPreference.getProfilePref(act, AppPreference.PREF_IMAGE), otherNick, otherImage, otherImageState, otherGender);
+        adapter = new ChattingAdapter(act, room_idx, list, profile_img, otherNick, otherImage, otherImageState, otherGender);
         binding.rcvChatting.setAdapter(adapter);
         binding.rcvChatting.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
             @Override
@@ -283,7 +279,6 @@ public class ChattingAct extends BasicAct implements View.OnClickListener, Popup
                 }
             }
         });
-
     }
 
     @Override
@@ -824,6 +819,50 @@ public class ChattingAct extends BasicAct implements View.OnClickListener, Popup
         server.addParams("midx", AppPreference.getProfilePref(act, AppPreference.PREF_MIDX));
         server.addParams("contents", contents);
         server.addParams("room_idx", room_idx);
+        server.execute(true, false);
+    }
+
+    private void getMyInfo() {
+        ReqBasic server = new ReqBasic(act, NetUrls.INFO_ME) {
+            @Override
+            public void onAfter(int resultCode, HttpResult resultData) {
+                if (resultData.getResult() != null) {
+                    try {
+                        JSONObject jo = new JSONObject(resultData.getResult());
+
+                        if (StringUtil.getStr(jo, "result").equalsIgnoreCase("Y") || StringUtil.getStr(jo, "result").equalsIgnoreCase(NetUrls.SUCCESS)) {
+                            final JSONObject job = jo.getJSONObject("value");
+
+                            //프로필 사진관련
+                            if(!StringUtil.isNull(StringUtil.getStr(job, "piimg"))) {
+                                JSONArray img_array = job.getJSONArray("piimg");
+                                JSONObject img_object = img_array.getJSONObject(img_array.length()-1);
+                                profile_img = StringUtil.getStr(img_object, "pi_img");
+                            } else {
+                                profile_img = "";
+                            }
+                        } else {
+                        }
+
+
+                        setLayout();
+                        if (isMatching) {
+                            isFirstMsg();
+                            checkChattingPay();
+                        } else {
+                            setupSocketClient();
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                }
+            }
+        };
+
+        server.setTag("My Profile");
+        server.addParams("midx", AppPreference.getProfilePref(act, AppPreference.PREF_MIDX));
         server.execute(true, false);
     }
 

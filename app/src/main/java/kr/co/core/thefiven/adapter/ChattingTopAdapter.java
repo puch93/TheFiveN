@@ -20,6 +20,7 @@ import jp.wasabeef.glide.transformations.BlurTransformation;
 import kr.co.core.thefiven.R;
 import kr.co.core.thefiven.activity.ChattingAct;
 import kr.co.core.thefiven.data.ChattingTopData;
+import kr.co.core.thefiven.utility.AppPreference;
 import kr.co.core.thefiven.utility.StringUtil;
 
 public class ChattingTopAdapter extends RecyclerView.Adapter<ChattingTopAdapter.ViewHolder> {
@@ -79,6 +80,7 @@ public class ChattingTopAdapter extends RecyclerView.Adapter<ChattingTopAdapter.
      * 검수완료: Y / 검수중: N
      * */
     private void checkImageState(ImageView imageView, String dataUrl, String state, String gender) {
+        gender = AppPreference.getProfilePref(act, AppPreference.PREF_GENDER).equalsIgnoreCase("male") ? "female" : "male";
         if (state.equalsIgnoreCase("Y")) {
             Glide.with(act)
                     .load(dataUrl)

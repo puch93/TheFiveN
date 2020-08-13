@@ -42,7 +42,6 @@ public class CellPhoneAuthAct extends BasicAct implements View.OnClickListener {
 
         /* set click listener */
         binding.flBack.setOnClickListener(this);
-        binding.flSkip.setOnClickListener(this);
         binding.tvRequestCheck.setOnClickListener(this);
         binding.tvAuthCheck.setOnClickListener(this);
     }
@@ -123,14 +122,6 @@ public class CellPhoneAuthAct extends BasicAct implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.fl_skip:
-                if(StringUtil.isNull(facebook_token)) {
-                    startActivityForResult(new Intent(act, JoinAct.class).putExtra("phone", ""), JOIN_RESULT);
-                } else {
-                    startActivityForResult(new Intent(act, JoinAct.class).putExtra("phone", "").putExtra("id", facebook_token), JOIN_RESULT);
-                }
-                break;
-
             case R.id.tv_request_check:
                 if (binding.etCellNum.length() == 0) {
                     Common.showToast(act, "휴대폰번호를 입력해주세요");
@@ -145,7 +136,7 @@ public class CellPhoneAuthAct extends BasicAct implements View.OnClickListener {
 
             case R.id.tv_auth_check:
                 if (StringUtil.isNull(phone)) {
-                    Common.showToast(act, "휴대폰번호를 입력해주세요");
+                    Common.showToast(act, "인증번호를 요청해주세요");
                     return;
                 } else if (binding.etAuthNum.length() != 6) {
                     Common.showToast(act, "인증번호를 확인해주세요");

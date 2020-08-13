@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -97,13 +98,23 @@ public class MyInfoEditAct extends BasicAct implements View.OnClickListener {
 
                         if (StringUtil.getStr(jo, "result").equalsIgnoreCase("Y") || StringUtil.getStr(jo, "result").equalsIgnoreCase(NetUrls.SUCCESS)) {
                             final JSONObject job = jo.getJSONObject("value");
-                            AppPreference.setProfilePref(act, AppPreference.PREF_IMAGE, StringUtil.getStr(job, "p_image1"));
+
+                            //프로필 사진관련
+                            final String profile_img;
+                            if(!StringUtil.isNull(StringUtil.getStr(job, "piimg"))) {
+                                JSONArray img_array = job.getJSONArray("piimg");
+                                JSONObject img_object = img_array.getJSONObject(img_array.length()-1);
+                                profile_img = StringUtil.getStr(img_object, "pi_img");
+                            } else {
+                                profile_img = "";
+                            }
+
 
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     // 프로필 사진
-                                    Glide.with(act).load(StringUtil.getStr(job, "p_image1")).centerCrop().transform(new CircleCrop()).into(binding.ivProfileImg);
+                                    Glide.with(act).load(profile_img).centerCrop().transform(new CircleCrop()).into(binding.ivProfileImg);
 
                                     // 닉네임
                                     binding.tvNick.setText(StringUtil.getStr(job, "nick"));
