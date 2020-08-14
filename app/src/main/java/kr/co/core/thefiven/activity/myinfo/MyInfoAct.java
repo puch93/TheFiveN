@@ -132,8 +132,10 @@ public class MyInfoAct extends BasicAct implements View.OnClickListener {
         if (state.equalsIgnoreCase("Y")) {
             binding.ivProfileImgCk.setVisibility(View.GONE);
         } else if (state.equalsIgnoreCase("N")) {
+            binding.ivProfileImgCk.setVisibility(View.VISIBLE);
             Glide.with(act).load(R.drawable.icon_confirm).into(binding.ivProfileImgCk);
         } else if (state.equalsIgnoreCase("fail")) {
+            binding.ivProfileImgCk.setVisibility(View.VISIBLE);
             Glide.with(act).load(R.drawable.icon_fail).into(binding.ivProfileImgCk);
         } else {
             binding.ivProfileImgCk.setVisibility(View.GONE);
@@ -163,6 +165,7 @@ public class MyInfoAct extends BasicAct implements View.OnClickListener {
                                 profile_img = StringUtil.getStr(img_object, "pi_img");
                                 profile_img_ck = StringUtil.getStr(img_object, "pi_img_chk");
                             }
+
                             checkImageState(binding.ivProfileImg, profile_img, profile_img_ck);
 
                             runOnUiThread(new Runnable() {

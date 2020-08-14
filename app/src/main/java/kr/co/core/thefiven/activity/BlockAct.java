@@ -84,6 +84,18 @@ public class BlockAct extends BasicAct {
                                     JSONObject img_object = img_array.getJSONObject(0);
                                     profile_img = StringUtil.getStr(img_object, "pi_img");
                                     pi_img_chk = StringUtil.getStr(img_object, "pi_img_chk");
+
+                                    for (int j = 0; j < img_array.length(); j++) {
+                                        JSONObject object = img_array.getJSONObject(j);
+                                        String profile_img_tmp = StringUtil.getStr(object, "pi_img");
+                                        String pi_img_chk_tmp = StringUtil.getStr(object, "pi_img_chk");
+
+                                        if(pi_img_chk_tmp.equalsIgnoreCase("Y")) {
+                                            profile_img = profile_img_tmp;
+                                            pi_img_chk = pi_img_chk_tmp;
+                                            break;
+                                        }
+                                    }
                                 }
 
 

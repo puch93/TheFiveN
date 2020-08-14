@@ -163,6 +163,18 @@ public class MainFrag extends MenuBasicFrag implements View.OnClickListener, Swi
                                     JSONObject img_object = img_array.getJSONObject(0);
                                     profile_img = StringUtil.getStr(img_object, "pi_img");
                                     pi_img_chk = StringUtil.getStr(img_object, "pi_img_chk");
+
+                                    for (int j = 0; j < img_array.length(); j++) {
+                                        JSONObject object = img_array.getJSONObject(j);
+                                        String profile_img_tmp = StringUtil.getStr(object, "pi_img");
+                                        String pi_img_chk_tmp = StringUtil.getStr(object, "pi_img_chk");
+
+                                        if(pi_img_chk_tmp.equalsIgnoreCase("Y")) {
+                                            profile_img = profile_img_tmp;
+                                            pi_img_chk = pi_img_chk_tmp;
+                                            break;
+                                        }
+                                    }
                                 }
 
                                 MainTopData data = new MainTopData(idx, location, StringUtil.calcAge(age), gender, profile_img, pi_img_chk);
@@ -240,8 +252,19 @@ public class MainFrag extends MenuBasicFrag implements View.OnClickListener, Swi
                                     JSONObject img_object = img_array.getJSONObject(0);
                                     profile_img = StringUtil.getStr(img_object, "pi_img");
                                     pi_img_chk = StringUtil.getStr(img_object, "pi_img_chk");
-                                }
 
+                                    for (int j = 0; j < img_array.length(); j++) {
+                                        JSONObject object = img_array.getJSONObject(j);
+                                        String profile_img_tmp = StringUtil.getStr(object, "pi_img");
+                                        String pi_img_chk_tmp = StringUtil.getStr(object, "pi_img_chk");
+
+                                        if(pi_img_chk_tmp.equalsIgnoreCase("Y")) {
+                                            profile_img = profile_img_tmp;
+                                            pi_img_chk = pi_img_chk_tmp;
+                                            break;
+                                        }
+                                    }
+                                }
 
                                 MainBottomData data = new MainBottomData(idx, nick, age, gender, location, profile_img, profile_img_count, cgpms_kind, cgpms_point, like_state, like_double_state, pi_img_chk);
                                 bottomList.add(data);

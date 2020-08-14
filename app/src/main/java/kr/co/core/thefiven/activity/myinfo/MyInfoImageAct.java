@@ -70,7 +70,8 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
 
     private ItemTouchHelper itemTouchHelper;
 
-    public static boolean isFirst = true;
+
+    private int all_img_count = 0;
 
     ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, 0) {
         @Override
@@ -83,7 +84,18 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
                         Collections.swap(imageList, i, i + 1);
                     }
 
-                    isFirst = false;
+                    if(imageList.get(fromPosition).getPosition() != -1) {
+                        RegImageData data = imageList.get(fromPosition);
+                        data.setImage_change("Y");
+                        imageList.set(fromPosition, data);
+                    }
+
+                    if(imageList.get(toPosition).getPosition() != -1) {
+                        RegImageData data = imageList.get(toPosition);
+                        data.setImage_change("Y");
+                        imageList.set(toPosition, data);
+                    }
+
                 } else {
                     return false;
                 }
@@ -93,7 +105,18 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
                         Collections.swap(imageList, i, i - 1);
                     }
 
-                    isFirst = false;
+                    if(imageList.get(fromPosition).getPosition() != -1) {
+                        RegImageData data = imageList.get(fromPosition);
+                        data.setImage_change("Y");
+                        imageList.set(fromPosition, data);
+                    }
+
+                    if(imageList.get(toPosition).getPosition() != -1) {
+                        RegImageData data = imageList.get(toPosition);
+                        data.setImage_change("Y");
+                        imageList.set(toPosition, data);
+                    }
+
                 } else {
                     return false;
                 }
@@ -169,18 +192,20 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
                             //프로필 사진관련
                             if(!StringUtil.isNull(StringUtil.getStr(job, "piimg"))) {
                                 JSONArray img_array = job.getJSONArray("piimg");
+                                all_img_count = img_array.length();
                                 for (int i = img_array.length() - 1; i >= 0; i--) {
                                     JSONObject img_object = img_array.getJSONObject(i);
                                     String profile_img = StringUtil.getStr(img_object, "pi_img");
                                     String profile_img_ck = StringUtil.getStr(img_object, "pi_img_chk");
 
-                                    imageList.add(new RegImageData(profile_img, true, profile_img_ck));
+                                    imageList.add(new RegImageData(img_array.length() - 1 -i, profile_img, profile_img_ck, "N"));
                                 }
                             }
 
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+                                    Log.i(StringUtil.TAG, "list (first): " + imageList.toString());
                                     adapter.setList(imageList);
                                 }
                             });
@@ -231,6 +256,36 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
         return f;
     }
 
+    private String downloadImagePath(String imgUrl) {
+        Bitmap img = null;
+        File f = null;
+        Log.e(StringUtil.TAG, "imgUrl: " + imgUrl);
+
+        try {
+            f = createImageFile();
+            URL url = new URL(imgUrl);
+            URLConnection conn = url.openConnection();
+
+            int nSize = conn.getContentLength();
+            BufferedInputStream bis = new BufferedInputStream(conn.getInputStream(), nSize);
+            img = BitmapFactory.decodeStream(bis);
+
+            bis.close();
+
+            FileOutputStream out = new FileOutputStream(f);
+            img.compress(Bitmap.CompressFormat.PNG, 100, out);
+            out.close();
+
+            img.recycle();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Log.i(StringUtil.TAG, "downloadImagePath: " + f.getPath());
+        return f.getAbsolutePath();
+    }
+
 
 
     private void doRegImage() {
@@ -246,7 +301,8 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
                             setResult(RESULT_OK);
                             finish();
                         } else {
-
+                            Common.showToast(act, StringUtil.getStr(jo, "value"));
+                            Log.i(StringUtil.TAG, "value: " + StringUtil.getStr(jo, "value"));
                         }
 
                     } catch (JSONException e) {
@@ -267,16 +323,24 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
             @Override
             public void run() {
                 super.run();
+
+
                 for (int i = 0; i < imageList.size(); i++) {
-                    if (imageList.get(i).isFromServer()) {
-                        File file = downloadImage(imageList.get(i).getImage());
-                        Log.i(StringUtil.TAG, "file name" + i + ": " + file.getName());
-                        server.addFileParams("image" + (i + 1), file);
-                    } else {
-                        File img = new File(imageList.get(i).getImage());
-                        Log.i(StringUtil.TAG, "file name" + i + ": " + img.getName());
+                    RegImageData data = imageList.get(i);
+
+                    if(data.getPosition() != -1) {
+                        File img = downloadImage(data.getImage());
                         server.addFileParams("image" + (i + 1), img);
+                        server.addParams("chgimg" + (i + 1), data.getImage_change());
+                    } else {
+                        File img = new File(data.getImage());
+                        server.addFileParams("image" + (i + 1), img);
+                        server.addParams("chgimg" + (i + 1), data.getImage_change());
                     }
+                }
+
+                for (int i = imageList.size(); i < 6; i++) {
+                    server.addParams("chgimg" + (i + 1), "D");
                 }
 
                 server.execute(true, true);
@@ -359,14 +423,13 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
 
 
                         // 사진추가
-                        imageList.add(new RegImageData(mImgFilePath, false, "Y"));
+                        imageList.add(new RegImageData(-1, mImgFilePath, "Y", "I"));
 
                         // 리싸이클러뷰 갱신
                         act.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 adapter.setList(imageList);
-                                isFirst = false;
                                 Log.e(StringUtil.TAG, "isFirst: ");
                             }
                         });
@@ -389,7 +452,6 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        isFirst = true;
     }
 
     private void getAlbum() {
@@ -491,11 +553,21 @@ public class MyInfoImageAct extends BasicAct implements View.OnClickListener {
                 } else if (imageList.size() > 6) {
                     Common.showToast(act, "최대 6장까지 등록 가능합니다");
                 } else {
-                    if (!isFirst) {
-                        doRegImage();
-                    } else {
-                        finish();
+                    for (int i = 0; i < imageList.size(); i++) {
+                        RegImageData data = imageList.get(i);
+                        if(i < all_img_count) {
+                            if (data.getPosition() == i) {
+                                data.setImage_change("N");
+                            } else {
+                                data.setImage_change("Y");
+                            }
+                        } else {
+                            data.setImage_change("I");
+                        }
                     }
+
+                    Log.i(StringUtil.TAG, "list: " + imageList.toString());
+                    doRegImage();
                 }
                 break;
         }

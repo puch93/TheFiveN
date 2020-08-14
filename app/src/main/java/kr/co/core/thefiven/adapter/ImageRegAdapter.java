@@ -2,9 +2,7 @@ package kr.co.core.thefiven.adapter;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,13 +18,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 
 import java.util.ArrayList;
 
 import kr.co.core.thefiven.R;
-import kr.co.core.thefiven.activity.myinfo.MyInfoImageAct;
 import kr.co.core.thefiven.data.RegImageData;
 import kr.co.core.thefiven.utility.StringUtil;
 
@@ -131,7 +127,7 @@ public class ImageRegAdapter extends RecyclerView.Adapter<ImageRegAdapter.ViewHo
         if (viewType == VIEW_ITEM) {
             ViewHolder1 holder1 = (ViewHolder1) holder;
 
-            checkImageState(holder1.iv_image, holder1.iv_image_ck, imageList.get(i).getImage(), imageList.get(i).getImage_ck());
+            checkImageState(holder1.iv_image, holder1.iv_image_ck, imageList.get(i).getImage(), imageList.get(i).getImage_auth());
             Glide.with(act)
                     .load(imageList.get(i).getImage())
                     .centerCrop()
@@ -153,7 +149,6 @@ public class ImageRegAdapter extends RecyclerView.Adapter<ImageRegAdapter.ViewHo
                                 public void onClick(DialogInterface dialog, int which) {
                                     imageList.remove(i);
                                     notifyDataSetChanged();
-                                    MyInfoImageAct.isFirst = false;
                                     dialog.cancel();
                                 }
                             });

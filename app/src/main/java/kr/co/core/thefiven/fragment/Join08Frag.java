@@ -184,7 +184,7 @@ public class Join08Frag extends BasicFrag implements View.OnClickListener {
 
 
                         // 사진추가
-                        imageList.add(new RegImageData(mImgFilePath, false, "Y"));
+                        imageList.add(new RegImageData(-1, mImgFilePath, "Y", null));
 
                         // 리싸이클러뷰 갱신
                         act.runOnUiThread(new Runnable() {
