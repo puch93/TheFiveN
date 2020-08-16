@@ -100,21 +100,33 @@ public class MyInfoEditAct extends BasicAct implements View.OnClickListener {
                             final JSONObject job = jo.getJSONObject("value");
 
                             //프로필 사진관련
-                            final String profile_img;
+                            String profile_img;
                             if(!StringUtil.isNull(StringUtil.getStr(job, "piimg"))) {
                                 JSONArray img_array = job.getJSONArray("piimg");
                                 JSONObject img_object = img_array.getJSONObject(img_array.length()-1);
                                 profile_img = StringUtil.getStr(img_object, "pi_img");
+
+                                for (int j = img_array.length()-1; j >= 0; j--) {
+                                    JSONObject object = img_array.getJSONObject(j);
+                                    String profile_img_tmp = StringUtil.getStr(object, "pi_img");
+                                    String pi_img_chk_tmp = StringUtil.getStr(object, "pi_img_chk");
+
+                                    if(pi_img_chk_tmp.equalsIgnoreCase("Y")) {
+                                        profile_img = profile_img_tmp;
+                                        break;
+                                    }
+                                }
                             } else {
                                 profile_img = "";
                             }
 
 
+                            final String finalProfile_img = profile_img;
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     // 프로필 사진
-                                    Glide.with(act).load(profile_img).centerCrop().transform(new CircleCrop()).into(binding.ivProfileImg);
+                                    Glide.with(act).load(finalProfile_img).centerCrop().transform(new CircleCrop()).into(binding.ivProfileImg);
 
                                     // 닉네임
                                     binding.tvNick.setText(StringUtil.getStr(job, "nick"));

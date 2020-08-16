@@ -55,6 +55,16 @@
 
         </FrameLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* 사진의 자리를 변경할 경우, 자리 변경된 사진은 검수대상이 됩니다."
+            android:textColor="@color/color_3b3b3b"
+            android:layout_marginLeft="7.5dp"
+            android:layout_marginTop="7.7dp"
+            android:layout_marginRight="7.5dp"
+            android:textSize="11dp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_image"

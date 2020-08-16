@@ -70,6 +70,11 @@ public class Join06Frag extends BasicFrag implements View.OnClickListener {
         binding.flNext.setOnClickListener(this);
         binding.flSkip.setOnClickListener(this);
         binding.flBack.setOnClickListener(this);
+        binding.areaAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
 
         binding.llTv.setOnClickListener(this);
         binding.llMovie.setOnClickListener(this);

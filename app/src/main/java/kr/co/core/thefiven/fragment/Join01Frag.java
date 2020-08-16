@@ -49,6 +49,11 @@ public class Join01Frag extends BasicFrag implements View.OnClickListener {
         binding.flBack.setOnClickListener(this);
         binding.tvRequestCheck.setOnClickListener(this);
         binding.tvAuthCheck.setOnClickListener(this);
+        binding.areaAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
 
         setTextWatcher();
         return binding.getRoot();

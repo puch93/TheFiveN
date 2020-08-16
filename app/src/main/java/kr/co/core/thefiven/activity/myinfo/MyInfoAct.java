@@ -164,6 +164,18 @@ public class MyInfoAct extends BasicAct implements View.OnClickListener {
                                 JSONObject img_object = img_array.getJSONObject(img_array.length() - 1);
                                 profile_img = StringUtil.getStr(img_object, "pi_img");
                                 profile_img_ck = StringUtil.getStr(img_object, "pi_img_chk");
+
+                                for (int j = img_array.length()-1; j >= 0; j--) {
+                                    JSONObject object = img_array.getJSONObject(j);
+                                    String profile_img_tmp = StringUtil.getStr(object, "pi_img");
+                                    String pi_img_chk_tmp = StringUtil.getStr(object, "pi_img_chk");
+
+                                    if(pi_img_chk_tmp.equalsIgnoreCase("Y")) {
+                                        profile_img = profile_img_tmp;
+                                        profile_img_ck = pi_img_chk_tmp;
+                                        break;
+                                    }
+                                }
                             }
 
                             checkImageState(binding.ivProfileImg, profile_img, profile_img_ck);

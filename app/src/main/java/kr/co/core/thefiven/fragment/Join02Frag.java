@@ -56,7 +56,11 @@ public class Join02Frag extends BasicFrag implements View.OnClickListener {
         binding.llBirthArea.setOnClickListener(this);
         binding.llGenderArea.setOnClickListener(this);
         binding.llLocationArea.setOnClickListener(this);
-
+        binding.areaAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
         // 음력체크
         binding.rgSolarLunar.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

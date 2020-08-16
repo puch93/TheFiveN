@@ -83,6 +83,11 @@ public class Join08Frag extends BasicFrag implements View.OnClickListener {
 
         binding.flComplete.setOnClickListener(this);
         binding.flBack.setOnClickListener(this);
+        binding.areaAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
 
         /* set recycler view */
         binding.rcvImage.setLayoutManager(new GridLayoutManager(act, 3));
