@@ -45,21 +45,53 @@ public class ReportAct extends BasicAct {
         nick = getIntent().getStringExtra("nick");
         gender = getIntent().getStringExtra("gender");
 
-        if (image.getProfile_img_ck().equalsIgnoreCase("Y")) {
-            Glide.with(act)
-                    .load(image.getProfile_img())
-                    .centerCrop()
-                    .transform(new CircleCrop())
-                    .into(binding.ivProfileImg);
-        } else if(image.getProfile_img_ck().equalsIgnoreCase("fail") || image.getProfile_img_ck().equalsIgnoreCase("N")){
-            Glide.with(act)
-                    .load(image.getProfile_img())
-                    .centerCrop()
-                    .transform(new BlurTransformation(10, 3), new CircleCrop())
-                    .into(binding.ivProfileImg);
+        if(image != null) {
+            if (image.getProfile_img_ck().equalsIgnoreCase("Y")) {
+                Glide.with(act)
+                        .load(image.getProfile_img())
+                        .centerCrop()
+                        .transform(new CircleCrop())
+                        .into(binding.ivProfileImg);
+            } else if (image.getProfile_img_ck().equalsIgnoreCase("fail") || image.getProfile_img_ck().equalsIgnoreCase("N")) {
+                Glide.with(act)
+                        .load(image.getProfile_img())
+                        .centerCrop()
+                        .transform(new BlurTransformation(10, 3), new CircleCrop())
+                        .into(binding.ivProfileImg);
+            } else {
+                if (!StringUtil.isNull(gender)) {
+                    if (gender.equalsIgnoreCase("male")) {
+                        Glide.with(act)
+                                .load(R.drawable.img_unknown_m)
+                                .centerCrop()
+                                .transform(new CircleCrop())
+                                .into(binding.ivProfileImg);
+                    } else {
+                        Glide.with(act)
+                                .load(R.drawable.img_unknown_w)
+                                .centerCrop()
+                                .transform(new CircleCrop())
+                                .into(binding.ivProfileImg);
+                    }
+                } else {
+                    if (!AppPreference.getProfilePref(act, AppPreference.PREF_GENDER).equalsIgnoreCase("male")) {
+                        Glide.with(act)
+                                .load(R.drawable.img_unknown_m)
+                                .centerCrop()
+                                .transform(new CircleCrop())
+                                .into(binding.ivProfileImg);
+                    } else {
+                        Glide.with(act)
+                                .load(R.drawable.img_unknown_w)
+                                .centerCrop()
+                                .transform(new CircleCrop())
+                                .into(binding.ivProfileImg);
+                    }
+                }
+            }
         } else {
-            if(!StringUtil.isNull(gender)) {
-                if (AppPreference.getProfilePref(act, AppPreference.PREF_GENDER).equalsIgnoreCase("male")) {
+            if (!StringUtil.isNull(gender)) {
+                if (gender.equalsIgnoreCase("male")) {
                     Glide.with(act)
                             .load(R.drawable.img_unknown_m)
                             .centerCrop()
@@ -73,11 +105,19 @@ public class ReportAct extends BasicAct {
                             .into(binding.ivProfileImg);
                 }
             } else {
-                Glide.with(act)
-                        .load(R.drawable.img_unknown_m)
-                        .centerCrop()
-                        .transform(new CircleCrop())
-                        .into(binding.ivProfileImg);
+                if (!AppPreference.getProfilePref(act, AppPreference.PREF_GENDER).equalsIgnoreCase("male")) {
+                    Glide.with(act)
+                            .load(R.drawable.img_unknown_m)
+                            .centerCrop()
+                            .transform(new CircleCrop())
+                            .into(binding.ivProfileImg);
+                } else {
+                    Glide.with(act)
+                            .load(R.drawable.img_unknown_w)
+                            .centerCrop()
+                            .transform(new CircleCrop())
+                            .into(binding.ivProfileImg);
+                }
             }
         }
 

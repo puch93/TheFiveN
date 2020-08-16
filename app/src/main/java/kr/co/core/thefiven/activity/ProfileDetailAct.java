@@ -269,27 +269,63 @@ public class ProfileDetailAct extends BasicAct implements View.OnClickListener, 
                             }
 
                             //프로필 사진관련
-                            String profile_img = null;
-                            String profile_img_ck = null;
 
                             JSONArray img_array = job.getJSONArray("piimg");
                             if (img_array.length() == 0) {
-                                profile_img_ck = "NO";
+                                String profile_img = null;
+                                String profile_img_ck = "NO";
                                 imageList.add(new OtherProfileImageData(profile_img, profile_img_ck));
                             } else {
+                                String profile_img = null;
+                                String profile_img_ck = null;
+
+                                String profile_img_tmp = null;
+                                String profile_img_ck_tmp = null;
+
+                                // null 이 아닌부분 넣기
                                 for (int i = img_array.length() - 1; i >= 0; i--) {
                                     JSONObject img_object = img_array.getJSONObject(i);
                                     profile_img = StringUtil.getStr(img_object, "pi_img");
                                     profile_img_ck = StringUtil.getStr(img_object, "pi_img_chk");
 
                                     if(!StringUtil.isNull(profile_img)) {
-                                        imageList.add(new OtherProfileImageData(profile_img, profile_img_ck));
+                                        break;
                                     }
-                                    Log.i(StringUtil.TAG, "end: ");
+                                }
+
+
+                                // 검수된 사진 우선표기
+                                for (int i = img_array.length() - 1; i >= 0; i--) {
+                                    JSONObject img_object = img_array.getJSONObject(i);
+                                    profile_img_tmp = StringUtil.getStr(img_object, "pi_img");
+                                    profile_img_ck_tmp = StringUtil.getStr(img_object, "pi_img_chk");
+
+                                    if(!StringUtil.isNull(profile_img_tmp)) {
+                                        if (profile_img_ck_tmp.equalsIgnoreCase("Y")) {
+                                            profile_img = profile_img_tmp;
+                                            profile_img_ck = profile_img_ck_tmp;
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                image = new OtherProfileImageData(profile_img, profile_img_ck);
+
+
+                                imageList.add(image);
+
+                                for (int i = img_array.length() - 1; i >= 0; i--) {
+                                    JSONObject img_object = img_array.getJSONObject(i);
+                                    profile_img_tmp = StringUtil.getStr(img_object, "pi_img");
+                                    profile_img_ck_tmp = StringUtil.getStr(img_object, "pi_img_chk");
+
+                                    if(!StringUtil.isNull(profile_img_tmp)) {
+                                        if(!profile_img_tmp.equalsIgnoreCase(image.getProfile_img())) {
+                                            imageList.add(new OtherProfileImageData(profile_img_tmp, profile_img_ck_tmp));
+                                        }
+                                    }
                                 }
                             }
-
-                            image = imageList.get(0);
 
                             runOnUiThread(new Runnable() {
                                 @Override
