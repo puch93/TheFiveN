@@ -287,7 +287,7 @@ public class ChattingFrag extends MenuBasicFrag implements View.OnClickListener,
                             });
                         } else {
                             bottomList = new ArrayList<>();
-
+                            Log.i(StringUtil.TAG, "msg: " + StringUtil.getStr(jo, "msg"));
 //                            Common.showToast(act, StringUtil.getStr(jo, "msg"));
                         }
 
