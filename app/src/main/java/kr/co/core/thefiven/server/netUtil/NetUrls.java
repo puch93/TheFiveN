@@ -185,7 +185,7 @@ public class NetUrls {
 
     //기프티쇼 브랜드 정보 조회
     public static final String GIFT_BRAND_LIST = DOMAIN + "/Member/getGiftishowBrandInfo";
-    //기프티쇼 브랜드 상세 정보 조회
+    //기프티쇼 브랜드 상세 정보 조회.
     public static final String GIFT_BRAND_DETAIL = DOMAIN + "/Member/getGiftishowBrandInfoDetail";
     //기프티쇼 선물받은 내역 --
     public static final String GIFT_STORAGE = DOMAIN + "/Member/getMyGiftishowInfo";
